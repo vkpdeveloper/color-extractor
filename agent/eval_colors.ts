@@ -255,7 +255,6 @@ async function runExtractor(
       title,
       top_k: extractorTopK,
       palette_path: extractorPalettePath,
-      use_skin_mask: true,
       external_id: externalId,
     }),
   });

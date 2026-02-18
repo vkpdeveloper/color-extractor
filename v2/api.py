@@ -18,10 +18,6 @@ class ExtractRequest(BaseModel):
         default=None,
         description="Optional local path to a user palette (.csv/.json)",
     )
-    use_skin_mask: bool = Field(
-        default=False,
-        description="Enable skin suppression masking",
-    )
     external_id: str | None = Field(
         default=None,
         description="Optional external id for masked image naming",
@@ -51,11 +47,11 @@ app = FastAPI(
 )
 
 
-def _build_pipeline(use_skin_mask: bool, title: str) -> ColorExtractionPipeline:
+def _build_pipeline(title: str) -> ColorExtractionPipeline:
     return ColorExtractionPipeline(
         mask_provider=CombinedMaskProvider(
             title=title,
-            heuristic=HeuristicMaskProvider(use_skin_mask=use_skin_mask),
+            heuristic=HeuristicMaskProvider(),
         )
     )
 
@@ -68,7 +64,7 @@ def _mask_output_path(external_id: str) -> str:
 
 @app.post("/extract", response_model=ExtractResponse)
 async def extract_colors(payload: ExtractRequest) -> ExtractResponse:
-    pipeline = _build_pipeline(use_skin_mask=payload.use_skin_mask, title=payload.title)
+    pipeline = _build_pipeline(title=payload.title)
     debug_mask_out = (
         _mask_output_path(payload.external_id) if payload.external_id else None
     )

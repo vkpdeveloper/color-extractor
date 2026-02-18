@@ -52,11 +52,6 @@ def _build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Optional external id for masked image naming.",
     )
-    extract.add_argument(
-        "--use-skin-mask",
-        action="store_true",
-        help="Enable skin suppression. Off by default because it can hide skin-toned garments.",
-    )
 
     return parser
 
@@ -73,7 +68,7 @@ def main() -> None:
             debug_mask_out = str(root_dir / "masked_images" / f"{safe_external_id}.jpg")
         mask_provider = CombinedMaskProvider(
             title=args.title,
-            heuristic=HeuristicMaskProvider(use_skin_mask=bool(args.use_skin_mask)),
+            heuristic=HeuristicMaskProvider(),
         )
         pipeline = ColorExtractionPipeline(mask_provider=mask_provider)
         result = pipeline.run(

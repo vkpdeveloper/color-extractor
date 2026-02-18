@@ -143,11 +143,6 @@ def test_heuristic_provider_center_fallback_on_flat_image():
     assert 0.05 <= float(mask.mean()) <= 0.60
 
 
-def test_heuristic_provider_skin_mask_disabled_by_default():
-    provider = HeuristicMaskProvider()
-    assert provider.use_skin_mask is False
-
-
 def test_heuristic_provider_recovers_centered_shirt_like_region(tmp_path):
     image = np.zeros((220, 160, 3), dtype=np.uint8)
     image[:, :] = [232, 221, 205]  # plain warm background

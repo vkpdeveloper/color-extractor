@@ -35,7 +35,8 @@ class HeuristicMaskProvider:
     center_fallback_ratio: float = 0.72
     center_focus_ratio: float = 0.50
     min_component_area_ratio: float = 0.002
-    use_skin_mask: bool = False
+    border_band_ratio: float = 0.06
+    border_component_area_ratio: float = 0.15
 
     def get_mask(self, image_rgb: np.ndarray) -> np.ndarray:
         if image_rgb.ndim != 3 or image_rgb.shape[2] != 3:
@@ -47,10 +48,11 @@ class HeuristicMaskProvider:
         lab = skcolor.rgb2lab(work / 255.0)
         candidate_background = self._corner_background_mask(lab)
         connected_background = self._edge_connected_mask(candidate_background)
-        if self.use_skin_mask:
-            skin_mask = self._skin_mask(work)
-        else:
-            skin_mask = np.zeros(work.shape[:2], dtype=bool)
+        skin_mask = self._edge_connected_mask(self._skin_mask(work))
+        if self.border_band_ratio > 0:
+            skin_mask &= self._border_band_mask(
+                work.shape[0], work.shape[1], ratio=self.border_band_ratio
+            )
 
         foreground = ~(connected_background | skin_mask)
         foreground = opening(foreground, disk(2))
@@ -58,6 +60,7 @@ class HeuristicMaskProvider:
         foreground = remove_small_holes(foreground, max_size=128)
         foreground = remove_small_objects(foreground, max_size=96)
         foreground = self._retain_centered_components(foreground)
+        foreground = self._trim_border_components(foreground)
 
         coverage = float(np.mean(foreground))
         if coverage < self.min_coverage or coverage > self.max_coverage:
@@ -152,6 +155,15 @@ class HeuristicMaskProvider:
         mask[top : top + box_h, left : left + box_w] = True
         return mask
 
+    def _border_band_mask(self, height: int, width: int, ratio: float) -> np.ndarray:
+        thickness = max(1, int(round(min(height, width) * ratio)))
+        mask = np.zeros((height, width), dtype=bool)
+        mask[:thickness, :] = True
+        mask[-thickness:, :] = True
+        mask[:, :thickness] = True
+        mask[:, -thickness:] = True
+        return mask
+
     def _retain_centered_components(self, foreground: np.ndarray) -> np.ndarray:
         labels = measure.label(foreground, connectivity=2)
         if labels.max() == 0:
@@ -187,6 +199,48 @@ class HeuristicMaskProvider:
 
         largest_component = max(areas.items(), key=lambda item: item[1])[0]
         keep_ids.add(int(largest_component))
+
+        keep_mask = np.isin(labels, list(keep_ids))
+        if np.count_nonzero(keep_mask) == 0:
+            return foreground
+        return keep_mask
+
+    def _trim_border_components(self, foreground: np.ndarray) -> np.ndarray:
+        labels = measure.label(foreground, connectivity=2)
+        if labels.max() == 0:
+            return foreground
+
+        component_ids = np.unique(labels)
+        component_ids = component_ids[component_ids != 0]
+        if component_ids.size == 0:
+            return foreground
+
+        areas = {
+            int(component_id): int(np.count_nonzero(labels == component_id))
+            for component_id in component_ids
+        }
+        if not areas:
+            return foreground
+
+        largest_component = max(areas.items(), key=lambda item: item[1])[0]
+        largest_area = float(areas[largest_component])
+        border_labels = set(np.unique(labels[0, :]))
+        border_labels.update(np.unique(labels[-1, :]))
+        border_labels.update(np.unique(labels[:, 0]))
+        border_labels.update(np.unique(labels[:, -1]))
+        border_labels.discard(0)
+
+        keep_ids: set[int] = set()
+        for component_id in component_ids:
+            area = float(areas.get(int(component_id), 0))
+            if component_id == largest_component:
+                keep_ids.add(int(component_id))
+                continue
+            if component_id in border_labels:
+                if area >= largest_area * self.border_component_area_ratio:
+                    keep_ids.add(int(component_id))
+                continue
+            keep_ids.add(int(component_id))
 
         keep_mask = np.isin(labels, list(keep_ids))
         if np.count_nonzero(keep_mask) == 0:
@@ -415,21 +469,57 @@ class CombinedMaskProvider:
 
         heuristic_mask = self.heuristic.get_mask(image_rgb)
         segformer_mask = segformer.get_mask(image_rgb)
-        combined = heuristic_mask & segformer_mask
 
-        if self._has_reasonable_coverage(combined):
-            return combined
+        skin_mask = self.heuristic._edge_connected_mask(
+            self.heuristic._skin_mask(image_rgb)
+        )
+        if self.heuristic.border_band_ratio > 0:
+            skin_mask &= self.heuristic._border_band_mask(
+                image_rgb.shape[0],
+                image_rgb.shape[1],
+                ratio=self.heuristic.border_band_ratio,
+            )
+        if np.any(skin_mask):
+            heuristic_mask &= ~skin_mask
+            segformer_mask &= ~skin_mask
 
         if segformer.has_reasonable_coverage(segformer_mask):
-            return segformer_mask
+            refined = self._fill_segformer_holes(segformer_mask, heuristic_mask)
+            refined = self._post_process(refined)
+            if self._has_reasonable_coverage(refined):
+                return refined
+
+        combined = heuristic_mask & segformer_mask
+        if self._has_reasonable_coverage(combined):
+            return self._post_process(combined)
 
         if self._has_reasonable_coverage(heuristic_mask):
-            return heuristic_mask
+            return self._post_process(heuristic_mask)
 
-        return heuristic_mask
+        return self._post_process(segformer_mask)
 
     def _has_reasonable_coverage(self, mask: np.ndarray) -> bool:
         if mask.size == 0:
             return False
         coverage = float(mask.mean())
         return self.min_coverage <= coverage <= self.max_coverage
+
+    def _fill_segformer_holes(
+        self, segformer_mask: np.ndarray, heuristic_mask: np.ndarray
+    ) -> np.ndarray:
+        max_size = max(64, int(round(segformer_mask.size * 0.005)))
+        filled = remove_small_holes(segformer_mask, max_size=max_size)
+        holes = filled & ~segformer_mask
+        if np.any(holes):
+            return segformer_mask | (holes & heuristic_mask)
+        return segformer_mask
+
+    def _post_process(self, mask: np.ndarray) -> np.ndarray:
+        if mask.size == 0:
+            return mask
+        refined = closing(mask, disk(2))
+        refined = opening(refined, disk(1))
+        refined = remove_small_holes(refined, max_size=128)
+        refined = remove_small_objects(refined, max_size=64)
+        refined = self.heuristic._trim_border_components(refined)
+        return refined

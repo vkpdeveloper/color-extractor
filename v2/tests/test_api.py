@@ -9,7 +9,13 @@ from v2 import api
 
 def test_extract_endpoint_returns_color_fields(monkeypatch):
     class FakePipeline:
-        def run(self, image_path: str, palette_path: str | None, top_k: int, debug_mask_out: str | None):
+        def run(
+            self,
+            image_path: str,
+            palette_path: str | None,
+            top_k: int,
+            debug_mask_out: str | None,
+        ):
             assert image_path == "https://example.com/image.jpg"
             assert palette_path is None
             assert top_k == 2
@@ -36,10 +42,17 @@ def test_extract_endpoint_returns_color_fields(monkeypatch):
                 mask_coverage=0.7,
             )
 
-    monkeypatch.setattr(api, "_build_pipeline", lambda use_skin_mask: FakePipeline())
+    monkeypatch.setattr(api, "_build_pipeline", lambda title: FakePipeline())
 
     client = TestClient(api.app)
-    response = client.post("/extract", json={"image_url": "https://example.com/image.jpg", "top_k": 2})
+    response = client.post(
+        "/extract",
+        json={
+            "image_url": "https://example.com/image.jpg",
+            "title": "Example Shirt",
+            "top_k": 2,
+        },
+    )
 
     assert response.status_code == 200
     payload = response.json()
@@ -51,4 +64,3 @@ def test_extract_endpoint_returns_color_fields(monkeypatch):
     assert payload["colors"][0]["matched_code"] == "PMS-123"
     assert payload["colors"][0]["proportion"] == 0.6
     assert payload["colors"][0]["percentage"] == 60.0
-

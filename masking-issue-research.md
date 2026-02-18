@@ -5,7 +5,7 @@ What’s causing leakage in the current pipeline
 - Heuristic fallback is aggressive: when coverage is <0.20 or >0.98 it uses a center box; if the box includes background/skin/legs, leakage happens. This is frequent for model shots.
 - SegFormer depends on NLP title category. If title parsing fails or is ambiguous, SegFormer returns empty → CombinedMaskProvider falls back to heuristic.
 - If the mask is empty, extract_dominant_colors uses the full image (mask_empty_using_full_image). That guarantees leakage.
-- Skin removal is disabled by default (use_skin_mask=False), so arms/face can stay inside heuristic masks.
+- Skin removal is enabled by default, but skin-colored regions can still leak if the heuristic thresholding misses them or SegFormer includes partial arms.
 - CombinedMaskProvider returns heuristic even if it’s bad when combined mask coverage is low and segformer coverage is low. There’s no refinement step to “clean up” either mask.
   Why this matches your eval remarks
 - Many remarks mention neutral backgrounds, skin, pants, or studio walls. Those are exactly the failure modes of the heuristic + center-box fallback.
@@ -29,7 +29,7 @@ What’s causing leakage in the current pipeline
 
 3. Post-process masks to remove background/skin
 
-- Enable and tune use_skin_mask in heuristic by default (arm/face removal).
+- Keep skin masking enabled by default and refine thresholds/morphology if needed for stubborn skin tones.
 - Add a post-processing step to remove components that touch the image border and are color-similar to corners.
 - Keep only the largest centered component and discard small off-center components.
   Impact: removes arms, pants, and studio wall leakage in model shots.
