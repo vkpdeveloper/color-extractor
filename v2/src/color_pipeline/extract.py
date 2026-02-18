@@ -4,6 +4,7 @@ import math
 
 import numpy as np
 from skimage import color as skcolor
+from skimage.color import deltaE_ciede2000
 from sklearn.cluster import KMeans
 
 from .models import ExtractedColor
@@ -41,18 +42,22 @@ def extract_dominant_colors(
     effective_max_clusters = max(int(max_clusters), int(top_k), 1)
     min_clusters = max(1, min(int(top_k), effective_max_clusters))
 
-    chosen_k = _choose_cluster_count(
-        lab_pixels,
-        max_clusters=effective_max_clusters,
-        min_clusters=min_clusters,
-        random_state=random_state,
-    )
+    if _is_low_variance(lab_pixels):
+        chosen_k = 1
+    else:
+        chosen_k = _choose_cluster_count(
+            lab_pixels,
+            max_clusters=effective_max_clusters,
+            min_clusters=min_clusters,
+            random_state=random_state,
+        )
 
     kmeans = KMeans(n_clusters=chosen_k, n_init=10, random_state=random_state)
     labels = kmeans.fit_predict(lab_pixels)
     centers_lab = kmeans.cluster_centers_
 
     counts = np.bincount(labels, minlength=chosen_k).astype(np.float64)
+    centers_lab, counts = _merge_neutral_clusters(centers_lab, counts)
     proportions = counts / max(np.sum(counts), 1.0)
 
     ordered = np.argsort(proportions)[::-1]
@@ -60,7 +65,11 @@ def extract_dominant_colors(
 
     extracted: list[ExtractedColor] = []
     for idx in selected:
-        lab = tuple(float(v) for v in centers_lab[idx])
+        lab = (
+            float(centers_lab[idx][0]),
+            float(centers_lab[idx][1]),
+            float(centers_lab[idx][2]),
+        )
         rgb = _lab_to_rgb_uint8(np.asarray(lab, dtype=np.float64))
         extracted.append(
             ExtractedColor(
@@ -146,6 +155,80 @@ def _choose_cluster_count(
 
     min_k = max(1, min(int(min_clusters), max_k))
     return max(min_k, chosen)
+
+
+def _is_low_variance(
+    lab_pixels: np.ndarray,
+    l_std_threshold: float = 6.0,
+    chroma_std_threshold: float = 4.0,
+) -> bool:
+    if lab_pixels.size == 0:
+        return False
+    l_std = float(np.std(lab_pixels[:, 0]))
+    chroma = np.sqrt(np.square(lab_pixels[:, 1]) + np.square(lab_pixels[:, 2]))
+    chroma_std = float(np.std(chroma))
+    return l_std <= l_std_threshold and chroma_std <= chroma_std_threshold
+
+
+def _merge_neutral_clusters(
+    centers_lab: np.ndarray,
+    counts: np.ndarray,
+    chroma_threshold: float = 10.0,
+    delta_e_threshold: float = 8.0,
+) -> tuple[np.ndarray, np.ndarray]:
+    if centers_lab.shape[0] <= 1:
+        return centers_lab, counts
+
+    chroma = np.sqrt(np.square(centers_lab[:, 1]) + np.square(centers_lab[:, 2]))
+    neutral_indices = [
+        int(i) for i, value in enumerate(chroma) if float(value) <= chroma_threshold
+    ]
+    if len(neutral_indices) < 2:
+        return centers_lab, counts
+
+    merged = [False] * centers_lab.shape[0]
+    new_centers: list[np.ndarray] = []
+    new_counts: list[float] = []
+
+    for idx in range(centers_lab.shape[0]):
+        if merged[idx]:
+            continue
+        if idx not in neutral_indices:
+            new_centers.append(centers_lab[idx])
+            new_counts.append(float(counts[idx]))
+            merged[idx] = True
+            continue
+
+        group = [idx]
+        merged[idx] = True
+        for jdx in neutral_indices:
+            if merged[jdx]:
+                continue
+            distance = float(
+                deltaE_ciede2000(
+                    centers_lab[idx].reshape(1, 1, 3),
+                    centers_lab[jdx].reshape(1, 1, 3),
+                ).reshape(-1)[0]
+            )
+            if distance <= delta_e_threshold:
+                group.append(jdx)
+                merged[jdx] = True
+
+        group_counts = counts[group].astype(np.float64)
+        weight = float(np.sum(group_counts))
+        if weight <= 0:
+            continue
+        weighted_center = (centers_lab[group] * group_counts[:, None]).sum(
+            axis=0
+        ) / weight
+        new_centers.append(weighted_center)
+        new_counts.append(weight)
+
+    if not new_centers:
+        return centers_lab, counts
+    return np.asarray(new_centers, dtype=np.float64), np.asarray(
+        new_counts, dtype=np.float64
+    )
 
 
 def _lab_to_rgb_uint8(lab: np.ndarray) -> tuple[int, int, int]:

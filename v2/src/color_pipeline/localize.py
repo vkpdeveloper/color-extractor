@@ -37,6 +37,7 @@ class HeuristicMaskProvider:
     min_component_area_ratio: float = 0.002
     border_band_ratio: float = 0.06
     border_component_area_ratio: float = 0.15
+    min_center_weight: float = 0.60
 
     def get_mask(self, image_rgb: np.ndarray) -> np.ndarray:
         if image_rgb.ndim != 3 or image_rgb.shape[2] != 3:
@@ -61,6 +62,7 @@ class HeuristicMaskProvider:
         foreground = remove_small_objects(foreground, max_size=96)
         foreground = self._retain_centered_components(foreground)
         foreground = self._trim_border_components(foreground)
+        foreground = self._prefer_center_mass(foreground)
 
         coverage = float(np.mean(foreground))
         if coverage < self.min_coverage or coverage > self.max_coverage:
@@ -201,6 +203,44 @@ class HeuristicMaskProvider:
         keep_ids.add(int(largest_component))
 
         keep_mask = np.isin(labels, list(keep_ids))
+        if np.count_nonzero(keep_mask) == 0:
+            return foreground
+        return keep_mask
+
+    def _prefer_center_mass(self, foreground: np.ndarray) -> np.ndarray:
+        labels = measure.label(foreground, connectivity=2)
+        if labels.max() == 0:
+            return foreground
+
+        component_ids = np.unique(labels)
+        component_ids = component_ids[component_ids != 0]
+        if component_ids.size == 0:
+            return foreground
+
+        center = self._center_box_mask(
+            foreground.shape[0],
+            foreground.shape[1],
+            ratio=self.center_focus_ratio,
+        )
+
+        total_area = float(np.count_nonzero(foreground))
+        if total_area == 0:
+            return foreground
+
+        center_weights = {}
+        for component_id in component_ids:
+            component = labels == component_id
+            center_area = float(np.count_nonzero(component & center))
+            weight = center_area / max(float(np.count_nonzero(component)), 1.0)
+            center_weights[int(component_id)] = weight
+
+        best_id = max(center_weights.items(), key=lambda item: item[1])[0]
+        best_weight = float(center_weights.get(best_id, 0.0))
+
+        if best_weight < self.min_center_weight:
+            return foreground
+
+        keep_mask = labels == best_id
         if np.count_nonzero(keep_mask) == 0:
             return foreground
         return keep_mask

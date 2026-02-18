@@ -21,6 +21,7 @@ type Env = {
 };
 
 type ExtractorColor = {
+  hex: string;
   name: string;
   matched_name: string | null;
   matched_palette_name: string | null;
@@ -41,6 +42,7 @@ type EvalRow = {
   title: unknown;
   imageUrl: string | null;
   extractedColorNames: string;
+  extractedColorCodes: string;
   extractorPaletteNames: string;
   extractorProportions: string;
   supportedColorNames: string;
@@ -184,6 +186,7 @@ function buildVerificationPrompt(
   const hint = title ? `\nTitle hint (may be wrong): ${title}` : "";
   const payload = extractedColors.map((color) => ({
     name: color.name,
+    hex: color.hex,
     matched_palette_name: color.matched_palette_name,
     matched_code: color.matched_code,
     proportion: color.proportion,
@@ -266,6 +269,7 @@ async function runExtractor(
 
   const payload = (await response.json()) as {
     colors?: Array<{
+      hex: string;
       matched_name: string | null;
       matched_palette_name: string | null;
       matched_code: string | null;
@@ -282,6 +286,7 @@ async function runExtractor(
       const name = color.matched_name ?? color.matched_palette_name;
       if (!name) return null;
       return {
+        hex: color.hex,
         name,
         matched_name: color.matched_name,
         matched_palette_name: color.matched_palette_name,
@@ -308,6 +313,9 @@ async function runExtractor(
     }
     if (!existing.matched_code && color.matched_code) {
       existing.matched_code = color.matched_code;
+    }
+    if (!existing.hex && color.hex) {
+      existing.hex = color.hex;
     }
   }
 
@@ -559,6 +567,7 @@ async function main() {
         title: "",
         imageUrl: null,
         extractedColorNames: "",
+        extractedColorCodes: "",
         extractorPaletteNames: "",
         extractorProportions: "",
         supportedColorNames: "",
@@ -592,6 +601,7 @@ async function main() {
         title,
         imageUrl: null,
         extractedColorNames: "",
+        extractedColorCodes: "",
         extractorPaletteNames: "",
         extractorProportions: "",
         supportedColorNames: "",
@@ -620,6 +630,7 @@ async function main() {
         title,
         imageUrl,
         extractedColorNames: "",
+        extractedColorCodes: "",
         extractorPaletteNames: "",
         extractorProportions: "",
         supportedColorNames: "",
@@ -694,6 +705,9 @@ async function main() {
         extractedColorNames: extractedColors
           .map((color) => color.name)
           .join(" | "),
+        extractedColorCodes: extractedColors
+          .map((color) => color.hex)
+          .join(" | "),
         extractorPaletteNames: extractedColors
           .map((color) => color.matched_palette_name ?? "")
           .filter(Boolean)
@@ -723,6 +737,7 @@ async function main() {
         title,
         imageUrl,
         extractedColorNames: "",
+        extractedColorCodes: "",
         extractorPaletteNames: "",
         extractorProportions: "",
         supportedColorNames: "",
@@ -757,6 +772,7 @@ async function main() {
     "title",
     "image_url",
     "extracted_colors",
+    "extracted_color_codes",
     "extractor_palette_names",
     "extractor_proportions",
     "supported_colors",
@@ -778,18 +794,19 @@ async function main() {
         csvEscape(row.title),
         csvEscape(row.imageUrl),
         csvEscape(row.extractedColorNames),
+        csvEscape(row.extractedColorCodes),
         csvEscape(row.extractorPaletteNames),
         csvEscape(row.extractorProportions),
         csvEscape(row.supportedColorNames),
         csvEscape(row.unsupportedColorNames),
         csvEscape(row.avgMatchConfidence),
-          csvEscape(row.supportedColors),
-          csvEscape(row.totalColors),
-          csvEscape(row.supportPercent),
-          csvEscape(row.remark),
-          csvEscape(row.promptTokens),
-          csvEscape(row.error),
-        ].join(","),
+        csvEscape(row.supportedColors),
+        csvEscape(row.totalColors),
+        csvEscape(row.supportPercent),
+        csvEscape(row.remark),
+        csvEscape(row.promptTokens),
+        csvEscape(row.error),
+      ].join(","),
     );
   }
 
