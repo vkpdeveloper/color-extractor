@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#EAD7C7",
+    "rgb": [
+      234,
+      215,
+      199
+    ],
+    "lab": [
+      87.14159746454155,
+      3.6805560995805306,
+      10.35086004318514
+    ],
+    "proportion": 0.4064884082660543,
+    "percentage": 40.64884082660543,
+    "matched_name": "Beige",
+    "matched_palette_name": "Light Beige",
+    "matched_code": "12-0806 TCX",
+    "delta_e": 4.954010899461884
+  },
+  "dominant_colors": [
+    {
+      "hex": "#EAD7C7",
+      "rgb": [
+        234,
+        215,
+        199
+      ],
+      "lab": [
+        87.14159746454155,
+        3.6805560995805306,
+        10.35086004318514
+      ],
+      "proportion": 0.4064884082660543,
+      "percentage": 40.64884082660543,
+      "matched_name": "Beige",
+      "matched_palette_name": "Light Beige",
+      "matched_code": "12-0806 TCX",
+      "delta_e": 4.954010899461884
+    },
+    {
+      "hex": "#EFDDCE",
+      "rgb": [
+        239,
+        221,
+        206
+      ],
+      "lab": [
+        89.26677834967114,
+        3.4523663700350102,
+        9.968763437572443
+      ],
+      "proportion": 0.32247981630990297,
+      "percentage": 32.247981630990296,
+      "matched_name": "Beige",
+      "matched_palette_name": "Light Beige",
+      "matched_code": "12-0806 TCX",
+      "delta_e": 4.578537538297604
+    },
+    {
+      "hex": "#E4D1C0",
+      "rgb": [
+        228,
+        209,
+        192
+      ],
+      "lab": [
+        84.99622531375793,
+        3.780797946504805,
+        10.687291844844367
+      ],
+      "proportion": 0.27103177542404266,
+      "percentage": 27.103177542404268,
+      "matched_name": "Beige",
+      "matched_palette_name": "Parchment",
+      "matched_code": "13-0908 TCX",
+      "delta_e": 4.806681957862504
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.51808779135943,
+  "warnings": []
+}

@@ -1,1 +1,9 @@
 *.pyc
+*.npz
+.env
+*.env
+.env.*
+*.csv
+*.png
+*.jpg
+*.jpeg

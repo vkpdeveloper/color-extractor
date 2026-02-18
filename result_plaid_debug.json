@@ -1,0 +1,97 @@
+{
+  "primary": {
+    "hex": "#B4939A",
+    "rgb": [
+      180,
+      147,
+      154
+    ],
+    "lab": [
+      64.03654478567478,
+      13.382039480877765,
+      0.8559402082103311
+    ],
+    "proportion": 0.2962104303433239,
+    "matched_name": "Navy Blue",
+    "matched_palette_name": "Blush Pink",
+    "matched_code": "15-1614 TCX",
+    "delta_e": 7.484905431132036
+  },
+  "dominant_colors": [
+    {
+      "hex": "#B4939A",
+      "rgb": [
+        180,
+        147,
+        154
+      ],
+      "lab": [
+        64.03654478567478,
+        13.382039480877765,
+        0.8559402082103311
+      ],
+      "proportion": 0.2962104303433239,
+      "matched_name": "Navy Blue",
+      "matched_palette_name": "Blush Pink",
+      "matched_code": "15-1614 TCX",
+      "delta_e": 7.484905431132036
+    },
+    {
+      "hex": "#8E363A",
+      "rgb": [
+        142,
+        54,
+        58
+      ],
+      "lab": [
+        35.50820247101853,
+        37.64905505637997,
+        16.970527150294632
+      ],
+      "proportion": 0.2665148032025161,
+      "matched_name": "Red",
+      "matched_palette_name": "Deep Red",
+      "matched_code": "19-1761 TCX",
+      "delta_e": 4.698965200156088
+    },
+    {
+      "hex": "#C6343B",
+      "rgb": [
+        198,
+        52,
+        59
+      ],
+      "lab": [
+        45.27644897996721,
+        57.2846748476052,
+        30.82771073276386
+      ],
+      "proportion": 0.24766105636188487,
+      "matched_name": "Red",
+      "matched_palette_name": "Bright Red",
+      "matched_code": "18-1763 TCX",
+      "delta_e": 3.3922324436932656
+    },
+    {
+      "hex": "#513A3F",
+      "rgb": [
+        81,
+        58,
+        63
+      ],
+      "lab": [
+        26.985381793203,
+        11.273721828794518,
+        0.5784551282153192
+      ],
+      "proportion": 0.18961371009227518,
+      "matched_name": "Brown",
+      "matched_palette_name": "Dark Brown",
+      "matched_code": "19-1526 TCX",
+      "delta_e": 6.586874095678141
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.4647929526748971,
+  "warnings": []
+}

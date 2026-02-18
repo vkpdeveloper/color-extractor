@@ -1,0 +1,158 @@
+from __future__ import annotations
+
+import math
+
+import numpy as np
+from skimage import color as skcolor
+from sklearn.cluster import KMeans
+
+from .models import ExtractedColor
+
+
+def extract_dominant_colors(
+    image_rgb: np.ndarray,
+    mask: np.ndarray,
+    top_k: int = 3,
+    max_clusters: int = 4,
+    random_state: int = 42,
+) -> tuple[list[ExtractedColor], list[str]]:
+    warnings: list[str] = []
+
+    if mask.shape[:2] != image_rgb.shape[:2]:
+        raise ValueError("mask shape must match image dimensions")
+
+    pixels = image_rgb[mask]
+    if pixels.shape[0] == 0:
+        warnings.append("mask_empty_using_full_image")
+        pixels = image_rgb.reshape(-1, 3)
+
+    pixels_float = pixels.astype(np.float64) / 255.0
+    filtered_pixels = _remove_specular_pixels(pixels_float)
+
+    if filtered_pixels.shape[0] < max(32, int(0.25 * pixels_float.shape[0])):
+        warnings.append("highlight_filter_removed_too_many_pixels")
+        filtered_pixels = pixels_float
+
+    lab_pixels = skcolor.rgb2lab(filtered_pixels.reshape(-1, 1, 3)).reshape(-1, 3)
+
+    if lab_pixels.shape[0] == 0:
+        raise RuntimeError("no pixels available after preprocessing")
+
+    effective_max_clusters = max(int(max_clusters), int(top_k), 1)
+    min_clusters = max(1, min(int(top_k), effective_max_clusters))
+
+    chosen_k = _choose_cluster_count(
+        lab_pixels,
+        max_clusters=effective_max_clusters,
+        min_clusters=min_clusters,
+        random_state=random_state,
+    )
+
+    kmeans = KMeans(n_clusters=chosen_k, n_init=10, random_state=random_state)
+    labels = kmeans.fit_predict(lab_pixels)
+    centers_lab = kmeans.cluster_centers_
+
+    counts = np.bincount(labels, minlength=chosen_k).astype(np.float64)
+    proportions = counts / max(np.sum(counts), 1.0)
+
+    ordered = np.argsort(proportions)[::-1]
+    selected = ordered[: max(1, top_k)]
+
+    extracted: list[ExtractedColor] = []
+    for idx in selected:
+        lab = tuple(float(v) for v in centers_lab[idx])
+        rgb = _lab_to_rgb_uint8(np.asarray(lab, dtype=np.float64))
+        extracted.append(
+            ExtractedColor(
+                hex=_rgb_to_hex(rgb),
+                rgb=rgb,
+                lab=lab,
+                proportion=float(proportions[idx]),
+            )
+        )
+
+    total_kept = sum(color.proportion for color in extracted)
+    if total_kept > 0:
+        extracted = [
+            ExtractedColor(
+                hex=color.hex,
+                rgb=color.rgb,
+                lab=color.lab,
+                proportion=float(color.proportion / total_kept),
+            )
+            for color in extracted
+        ]
+
+    return extracted, warnings
+
+
+def _remove_specular_pixels(pixels_float: np.ndarray) -> np.ndarray:
+    hsv = skcolor.rgb2hsv(pixels_float.reshape(-1, 1, 3)).reshape(-1, 3)
+    lab = skcolor.rgb2lab(pixels_float.reshape(-1, 1, 3)).reshape(-1, 3)
+
+    l_star = lab[:, 0]
+    chroma = np.sqrt(np.square(lab[:, 1]) + np.square(lab[:, 2]))
+
+    specular_hsv = (hsv[:, 2] > 0.96) & (hsv[:, 1] < 0.10)
+    specular_lab = (l_star > 97.0) & (chroma < 6.0)
+
+    keep = ~(specular_hsv | specular_lab)
+    if np.count_nonzero(keep) == 0:
+        return pixels_float
+    return pixels_float[keep]
+
+
+def _choose_cluster_count(
+    lab_pixels: np.ndarray,
+    max_clusters: int,
+    min_clusters: int,
+    random_state: int,
+    min_improvement: float = 0.12,
+) -> int:
+    pixel_count = lab_pixels.shape[0]
+    if pixel_count < 2:
+        return 1
+
+    max_k = max(1, min(max_clusters, int(math.sqrt(pixel_count)), pixel_count))
+    if max_k == 1:
+        return 1
+
+    sample = lab_pixels
+    if pixel_count > 12000:
+        rng = np.random.default_rng(random_state)
+        indices = rng.choice(pixel_count, 12000, replace=False)
+        sample = lab_pixels[indices]
+
+    unique_count = np.unique(np.round(sample, 4), axis=0).shape[0]
+    max_k = min(max_k, unique_count)
+    if max_k <= 1:
+        return 1
+
+    inertias: list[float] = []
+    for k in range(1, max_k + 1):
+        model = KMeans(n_clusters=k, n_init=10, random_state=random_state)
+        model.fit(sample)
+        inertias.append(float(model.inertia_))
+
+    chosen = 1
+    for i in range(1, len(inertias)):
+        prev = inertias[i - 1]
+        curr = inertias[i]
+        improvement = (prev - curr) / max(prev, 1e-9)
+        if improvement >= min_improvement:
+            chosen = i + 1
+        else:
+            break
+
+    min_k = max(1, min(int(min_clusters), max_k))
+    return max(min_k, chosen)
+
+
+def _lab_to_rgb_uint8(lab: np.ndarray) -> tuple[int, int, int]:
+    rgb = skcolor.lab2rgb(lab.reshape(1, 1, 3)).reshape(3)
+    clipped = np.clip(np.round(rgb * 255.0), 0, 255).astype(np.uint8)
+    return int(clipped[0]), int(clipped[1]), int(clipped[2])
+
+
+def _rgb_to_hex(rgb: tuple[int, int, int]) -> str:
+    return f"#{rgb[0]:02X}{rgb[1]:02X}{rgb[2]:02X}"

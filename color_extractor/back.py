@@ -16,6 +16,7 @@ class Back(Task):
     The second one computes the edges of the image and uses a flood fill
     starting from all corners.
     """
+
     def __init__(self, settings=None):
         """
         The possible settings are:
@@ -106,5 +107,5 @@ class Back(Task):
     def _scharr(img):
         # Invert the image to ease edge detection.
         img = 1. - img
-        grey = skc.rgb2grey(img)
+        grey = skc.rgb2gray(img)
         return skf.scharr(grey)

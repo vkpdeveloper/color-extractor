@@ -1,0 +1,41 @@
+{
+  "primary": {
+    "hex": "#2A2945",
+    "rgb": [
+      42,
+      41,
+      69
+    ],
+    "lab": [
+      18.03258481899955,
+      7.990190165865898,
+      -16.978786316865225
+    ],
+    "proportion": 1.0,
+    "matched_name": "Marine Blue",
+    "matched_code": "19-3920 TCX",
+    "delta_e": 3.5612930789487676
+  },
+  "dominant_colors": [
+    {
+      "hex": "#2A2945",
+      "rgb": [
+        42,
+        41,
+        69
+      ],
+      "lab": [
+        18.03258481899955,
+        7.990190165865898,
+        -16.978786316865225
+      ],
+      "proportion": 1.0,
+      "matched_name": "Marine Blue",
+      "matched_code": "19-3920 TCX",
+      "delta_e": 3.5612930789487676
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.49339570473251027,
+  "warnings": []
+}

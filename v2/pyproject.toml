@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "color-extractor-v2"
+version = "0.1.0"
+description = "No-training color extraction with Pantone-style palette mapping"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.2.0",
+    "pillow>=12.0.0",
+    "scikit-image>=0.26.0",
+    "scikit-learn>=1.8.0",
+    "requests>=2.31.0",
+    "torch>=2.2.0",
+    "transformers>=4.49.0",
+    "spacy>=3.8.11",
+    "fastapi>=0.116.0",
+    "uvicorn>=0.35.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "httpx>=0.28.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/color_pipeline"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/color_pipeline",
+    "data/open_palette.csv",
+    "README.md",
+    "main.py",
+    "__init__.py",
+]

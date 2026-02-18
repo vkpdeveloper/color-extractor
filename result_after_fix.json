@@ -1,0 +1,75 @@
+{
+  "primary": {
+    "hex": "#2A2945",
+    "rgb": [
+      42,
+      41,
+      69
+    ],
+    "lab": [
+      18.03258481899955,
+      7.990190165865897,
+      -16.978786316865225
+    ],
+    "proportion": 0.48762529170223434,
+    "matched_name": "Ink Blue",
+    "matched_code": "OPEN-INK-BLUE",
+    "delta_e": 4.472755097868006
+  },
+  "dominant_colors": [
+    {
+      "hex": "#2A2945",
+      "rgb": [
+        42,
+        41,
+        69
+      ],
+      "lab": [
+        18.03258481899955,
+        7.990190165865897,
+        -16.978786316865225
+      ],
+      "proportion": 0.48762529170223434,
+      "matched_name": "Ink Blue",
+      "matched_code": "OPEN-INK-BLUE",
+      "delta_e": 4.472755097868006
+    },
+    {
+      "hex": "#1D191B",
+      "rgb": [
+        29,
+        25,
+        27
+      ],
+      "lab": [
+        9.285855785997326,
+        2.3852015209148623,
+        -0.6583052746049787
+      ],
+      "proportion": 0.33488907858312605,
+      "matched_name": "Black",
+      "matched_code": "CSS-BLACK",
+      "delta_e": 6.478023537562176
+    },
+    {
+      "hex": "#C2A588",
+      "rgb": [
+        194,
+        165,
+        136
+      ],
+      "lab": [
+        69.52804985365617,
+        6.439270037703998,
+        18.947521679391457
+      ],
+      "proportion": 0.17748562971463958,
+      "matched_name": "Tan",
+      "matched_code": "CSS-TAN",
+      "delta_e": 5.469454440402506
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.49339570473251027,
+  "warnings": []
+}

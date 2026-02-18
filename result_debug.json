@@ -1,0 +1,75 @@
+{
+    "primary": {
+        "hex": "#131316",
+        "rgb": [
+            19,
+            19,
+            22
+        ],
+        "lab": [
+            6.061048034162596,
+            0.6948622153636005,
+            -1.7423040838610415
+        ],
+        "proportion": 0.5640134290935361,
+        "matched_name": "Black",
+        "matched_code": "CSS-BLACK",
+        "delta_e": 4.057187983440892
+    },
+    "dominant_colors": [
+        {
+            "hex": "#131316",
+            "rgb": [
+                19,
+                19,
+                22
+            ],
+            "lab": [
+                6.061048034162596,
+                0.6948622153636005,
+                -1.7423040838610415
+            ],
+            "proportion": 0.5640134290935361,
+            "matched_name": "Black",
+            "matched_code": "CSS-BLACK",
+            "delta_e": 4.057187983440892
+        },
+        {
+            "hex": "#E8D9C7",
+            "rgb": [
+                232,
+                217,
+                199
+            ],
+            "lab": [
+                87.37118954503805,
+                2.64247317759568,
+                10.491183576333313
+            ],
+            "proportion": 0.3066677999235052,
+            "matched_name": "Off-White",
+            "matched_code": "OPEN-OFF-WHITE",
+            "delta_e": 9.793123636550362
+        },
+        {
+            "hex": "#C1B3A6",
+            "rgb": [
+                193,
+                179,
+                166
+            ],
+            "lab": [
+                73.7394451465048,
+                2.69337432712093,
+                8.17370324684406
+            ],
+            "proportion": 0.12931877098295863,
+            "matched_name": "Silver",
+            "matched_code": "CSS-SILVER",
+            "delta_e": 8.090340734878422
+        }
+    ],
+    "palette_source": "open_fallback",
+    "mask_coverage": 0.15706575428282293,
+    "warnings": []
+}

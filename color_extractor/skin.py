@@ -46,8 +46,8 @@ class Skin(Task):
         mask = np.all((img >= self._lo) & (img <= self._up), axis=2)
 
         # Smooth the mask.
-        skm.binary_opening(mask, selem=self._k, out=mask)
-        return gaussian(mask, 0.8, multichannel=True) != 0
+        skm.opening(mask, footprint=self._k, out=mask)
+        return gaussian(mask, 0.8, channel_axis=None) != 0
 
     @staticmethod
     def _default_settings():
