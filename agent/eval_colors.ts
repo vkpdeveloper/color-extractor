@@ -119,6 +119,10 @@ function parseArgs(args: string[]) {
       i += 1;
       continue;
     }
+    if (arg.startsWith("--ids-path=")) {
+      options.idsPath = arg.split("=").slice(1).join("=");
+      continue;
+    }
   }
 
   return options;
@@ -138,13 +142,13 @@ const extractorApiUrl =
   "http://127.0.0.1:8000/extract";
 
 const query = cli.query ?? "tshirt";
-const limit = cli.limit ?? 100;
+let limit = cli.limit ?? 100;
 const concurrency = Math.max(10, cli.concurrency ?? 10);
 const extractorTopK = 3;
 const timeoutMs = cli.timeoutMs ?? 30000;
 const outCsv = cli.outCsv ?? "eval_results.csv";
 const minCombinedProportion = 0.2;
-const idsPath = cli.idsPath ?? "agent/eval_ids.txt";
+const idsPath = cli.idsPath ?? null;
 const pipelineDir = path.resolve(process.cwd(), "v2", "src", "color_pipeline");
 let pipelineSource = "";
 const maxRetries = 2;
@@ -241,6 +245,7 @@ async function fetchDocsByIds(ids: string[]) {
 async function runExtractor(
   imageUrl: string,
   title: string,
+  externalId: string,
 ): Promise<ExtractorColor[]> {
   const response = await fetch(extractorApiUrl, {
     method: "POST",
@@ -251,6 +256,7 @@ async function runExtractor(
       top_k: extractorTopK,
       palette_path: extractorPalettePath,
       use_skin_mask: true,
+      external_id: externalId,
     }),
   });
 
@@ -499,23 +505,31 @@ async function mapLimit<T, R>(
 
 async function main() {
   pipelineSource = await loadPipelineSource(pipelineDir);
-  const idFileContents = await fs.readFile(idsPath, "utf8");
-  const ids = idFileContents
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter(Boolean);
-  if (ids.length === 0) {
-    throw new Error(`No ids found in ${idsPath}`);
-  }
+  let orderedDocs: any[] = [];
+  if (idsPath) {
+    const idFileContents = await fs.readFile(idsPath, "utf8");
+    const ids = idFileContents
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+    if (ids.length === 0) {
+      throw new Error(`No ids found in ${idsPath}`);
+    }
+    limit = ids.length;
 
-  const docs = await fetchDocsByIds(ids);
-  const docsById = new Map<string, any>();
-  for (const doc of docs) {
-    if (doc?.__missingId) continue;
-    const key = String(doc?.[idField] ?? "");
-    if (key) docsById.set(key, doc);
+    const docs = await fetchDocsByIds(ids);
+    const docsById = new Map<string, any>();
+    for (const doc of docs) {
+      if (doc?.__missingId) continue;
+      const key = String(doc?.[idField] ?? "");
+      if (key) docsById.set(key, doc);
+    }
+    orderedDocs = ids
+      .slice(0, limit)
+      .map((id) => docsById.get(id) ?? { __missingId: id });
+  } else {
+    orderedDocs = await fetchDocs();
   }
-  const orderedDocs = ids.map((id) => docsById.get(id) ?? { __missingId: id });
 
   const progress = new cliProgress.SingleBar(
     {
@@ -629,15 +643,15 @@ async function main() {
     }
 
     try {
-      const extractedColors = await retryWithBackoff(
-        (attempt) =>
-          withTimeout(
-            runExtractor(imageUrl, title),
-            timeoutMs * Math.pow(timeoutBackoff, attempt),
-            "extractor",
-          ),
-        "extractor",
-      );
+        const extractedColors = await retryWithBackoff(
+          (attempt) =>
+            withTimeout(
+              runExtractor(imageUrl, title, lastId),
+              timeoutMs * Math.pow(timeoutBackoff, attempt),
+              "extractor",
+            ),
+          "extractor",
+        );
       if (extractedColors.length === 0) {
         throw new Error("extractor_no_colors");
       }

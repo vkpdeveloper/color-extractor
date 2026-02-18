@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from starlette.concurrency import run_in_threadpool
@@ -19,6 +21,10 @@ class ExtractRequest(BaseModel):
     use_skin_mask: bool = Field(
         default=False,
         description="Enable skin suppression masking",
+    )
+    external_id: str | None = Field(
+        default=None,
+        description="Optional external id for masked image naming",
     )
 
 
@@ -54,9 +60,18 @@ def _build_pipeline(use_skin_mask: bool, title: str) -> ColorExtractionPipeline:
     )
 
 
+def _mask_output_path(external_id: str) -> str:
+    root_dir = Path(__file__).resolve().parents[1]
+    safe_id = external_id.replace("/", "_").replace("\\", "_")
+    return str(root_dir / "masked_images" / f"{safe_id}.jpg")
+
+
 @app.post("/extract", response_model=ExtractResponse)
 async def extract_colors(payload: ExtractRequest) -> ExtractResponse:
     pipeline = _build_pipeline(use_skin_mask=payload.use_skin_mask, title=payload.title)
+    debug_mask_out = (
+        _mask_output_path(payload.external_id) if payload.external_id else None
+    )
     try:
         result = await run_in_threadpool(
             pipeline.run,
@@ -64,7 +79,7 @@ async def extract_colors(payload: ExtractRequest) -> ExtractResponse:
             payload.title,
             payload.palette_path,
             payload.top_k,
-            None,
+            debug_mask_out,
         )
     except Exception as exc:
         raise HTTPException(

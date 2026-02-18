@@ -48,6 +48,11 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Optional path to save the masked output image.",
     )
     extract.add_argument(
+        "--external-id",
+        default=None,
+        help="Optional external id for masked image naming.",
+    )
+    extract.add_argument(
         "--use-skin-mask",
         action="store_true",
         help="Enable skin suppression. Off by default because it can hide skin-toned garments.",
@@ -61,6 +66,11 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.command == "extract":
+        debug_mask_out = args.debug_mask_out
+        if not debug_mask_out and args.external_id:
+            root_dir = Path(__file__).resolve().parents[1]
+            safe_external_id = args.external_id.replace("/", "_").replace("\\", "_")
+            debug_mask_out = str(root_dir / "masked_images" / f"{safe_external_id}.jpg")
         mask_provider = CombinedMaskProvider(
             title=args.title,
             heuristic=HeuristicMaskProvider(use_skin_mask=bool(args.use_skin_mask)),
@@ -71,7 +81,7 @@ def main() -> None:
             title=args.title,
             palette_path=args.palette,
             top_k=args.top_k,
-            debug_mask_out=args.debug_mask_out,
+            debug_mask_out=debug_mask_out,
         )
 
         payload = json.dumps(result.to_dict(), indent=2)
