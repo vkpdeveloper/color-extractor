@@ -347,6 +347,20 @@ CANONICAL_CATEGORIES = {
     "right-leg": "right-leg",
 }
 
+DEFAULT_CATEGORY = "upper-clothes"
+DRESS_KEYWORDS = {"dress", "gown", "maxi", "midi", "mini", "jumpsuit", "romper"}
+BOTTOM_KEYWORDS = {
+    "pants",
+    "trousers",
+    "jeans",
+    "shorts",
+    "leggings",
+    "joggers",
+    "trackpants",
+    "chinos",
+    "skirt",
+}
+
 
 def _normalize_categories(categories: list[str]) -> list[str]:
     normalized: list[str] = []
@@ -447,7 +461,16 @@ class SegformerMaskProvider:
         processor = get_processor()
         entities = processor.extract_entities(self.title)
         category_terms = entities.get("CATEGORY", []) if entities else []
-        return _normalize_categories(category_terms)
+        normalized = _normalize_categories(category_terms)
+        if normalized:
+            return normalized
+
+        title = self.title.lower()
+        if any(keyword in title for keyword in DRESS_KEYWORDS):
+            return ["dress"]
+        if any(keyword in title for keyword in BOTTOM_KEYWORDS):
+            return ["pants", "skirt"]
+        return [DEFAULT_CATEGORY]
 
 
 @dataclass
