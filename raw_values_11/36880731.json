@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#827860",
+    "rgb": [
+      130,
+      120,
+      96
+    ],
+    "lab": [
+      50.75558774365481,
+      -0.09208042854644409,
+      14.507981408242005
+    ],
+    "proportion": 0.6628105139674887,
+    "percentage": 66.28105139674886,
+    "matched_name": "Brown",
+    "matched_palette_name": "Taupe Brown",
+    "matched_code": "17-0808 TCX",
+    "delta_e": 9.15110124819329
+  },
+  "dominant_colors": [
+    {
+      "hex": "#827860",
+      "rgb": [
+        130,
+        120,
+        96
+      ],
+      "lab": [
+        50.75558774365481,
+        -0.09208042854644409,
+        14.507981408242005
+      ],
+      "proportion": 0.6628105139674887,
+      "percentage": 66.28105139674886,
+      "matched_name": "Brown",
+      "matched_palette_name": "Taupe Brown",
+      "matched_code": "17-0808 TCX",
+      "delta_e": 9.15110124819329
+    },
+    {
+      "hex": "#A1987E",
+      "rgb": [
+        161,
+        152,
+        126
+      ],
+      "lab": [
+        62.91631250360148,
+        -0.8113817235817786,
+        14.711901551321548
+      ],
+      "proportion": 0.2976680030422956,
+      "percentage": 29.766800304229562,
+      "matched_name": "Beige",
+      "matched_palette_name": "Cashew",
+      "matched_code": "16-1109 TCX",
+      "delta_e": 6.674038592503065
+    },
+    {
+      "hex": "#3E3426",
+      "rgb": [
+        62,
+        52,
+        38
+      ],
+      "lab": [
+        22.45809259771092,
+        1.8488431330572301,
+        10.660414214733859
+      ],
+      "proportion": 0.03952148299021567,
+      "percentage": 3.952148299021567,
+      "matched_name": "Brown",
+      "matched_palette_name": "Coffee Brown",
+      "matched_code": "19-0915 TCX",
+      "delta_e": 5.5551147188268395
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.594726691257861,
+  "warnings": []
+}

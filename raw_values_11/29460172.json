@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#516182",
+    "rgb": [
+      81,
+      97,
+      130
+    ],
+    "lab": [
+      41.197159582872885,
+      2.3497013307169263,
+      -20.129467607713813
+    ],
+    "proportion": 0.8272639750205993,
+    "percentage": 82.72639750205994,
+    "matched_name": "Blue",
+    "matched_palette_name": "Classic Blue",
+    "matched_code": "19-4052 TCX",
+    "delta_e": 11.046659323654906
+  },
+  "dominant_colors": [
+    {
+      "hex": "#516182",
+      "rgb": [
+        81,
+        97,
+        130
+      ],
+      "lab": [
+        41.197159582872885,
+        2.3497013307169263,
+        -20.129467607713813
+      ],
+      "proportion": 0.8272639750205993,
+      "percentage": 82.72639750205994,
+      "matched_name": "Blue",
+      "matched_palette_name": "Classic Blue",
+      "matched_code": "19-4052 TCX",
+      "delta_e": 11.046659323654906
+    },
+    {
+      "hex": "#778BAB",
+      "rgb": [
+        119,
+        139,
+        171
+      ],
+      "lab": [
+        57.5472171366246,
+        0.35655902637356646,
+        -19.22904977093352
+      ],
+      "proportion": 0.17273602497940066,
+      "percentage": 17.273602497940065,
+      "matched_name": "Grey",
+      "matched_palette_name": "Frost Grey",
+      "matched_code": "17-0000 TCX",
+      "delta_e": 12.004298649595446
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5812352803587559,
+  "warnings": []
+}

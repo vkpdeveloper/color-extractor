@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#C9C9C4",
+    "rgb": [
+      201,
+      201,
+      196
+    ],
+    "lab": [
+      80.74361109965827,
+      -0.9106744805657954,
+      2.3274599930618067
+    ],
+    "proportion": 0.9826444471808343,
+    "percentage": 98.26444471808344,
+    "matched_name": "Grey",
+    "matched_palette_name": "Light Grey",
+    "matched_code": "14-4102 TCX",
+    "delta_e": 3.081580220317295
+  },
+  "dominant_colors": [
+    {
+      "hex": "#C9C9C4",
+      "rgb": [
+        201,
+        201,
+        196
+      ],
+      "lab": [
+        80.74361109965827,
+        -0.9106744805657954,
+        2.3274599930618067
+      ],
+      "proportion": 0.9826444471808343,
+      "percentage": 98.26444471808344,
+      "matched_name": "Grey",
+      "matched_palette_name": "Light Grey",
+      "matched_code": "14-4102 TCX",
+      "delta_e": 3.081580220317295
+    },
+    {
+      "hex": "#777068",
+      "rgb": [
+        119,
+        112,
+        104
+      ],
+      "lab": [
+        47.75756911535016,
+        0.8716934573119501,
+        5.613881645785441
+      ],
+      "proportion": 0.017355552819165676,
+      "percentage": 1.7355552819165676,
+      "matched_name": "Grey",
+      "matched_palette_name": "Concrete Grey",
+      "matched_code": "18-0503 TCX",
+      "delta_e": 6.259599465366355
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5907438083309765,
+  "warnings": []
+}

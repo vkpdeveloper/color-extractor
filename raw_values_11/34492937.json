@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#2B4F30",
+    "rgb": [
+      43,
+      79,
+      48
+    ],
+    "lab": [
+      30.322896550808544,
+      -20.847364716145897,
+      14.762050198899642
+    ],
+    "proportion": 0.6497154951526416,
+    "percentage": 64.97154951526416,
+    "matched_name": "Green",
+    "matched_palette_name": "Deep Forest Green",
+    "matched_code": "19-5230 TCX",
+    "delta_e": 10.206940860253843
+  },
+  "dominant_colors": [
+    {
+      "hex": "#2B4F30",
+      "rgb": [
+        43,
+        79,
+        48
+      ],
+      "lab": [
+        30.322896550808544,
+        -20.847364716145897,
+        14.762050198899642
+      ],
+      "proportion": 0.6497154951526416,
+      "percentage": 64.97154951526416,
+      "matched_name": "Green",
+      "matched_palette_name": "Deep Forest Green",
+      "matched_code": "19-5230 TCX",
+      "delta_e": 10.206940860253843
+    },
+    {
+      "hex": "#1E331C",
+      "rgb": [
+        30,
+        51,
+        28
+      ],
+      "lab": [
+        18.903412622676,
+        -14.044828309936255,
+        12.238636648243265
+      ],
+      "proportion": 0.3502845048473584,
+      "percentage": 35.02845048473584,
+      "matched_name": "Green",
+      "matched_palette_name": "Deep Forest Green",
+      "matched_code": "19-5230 TCX",
+      "delta_e": 8.80337721247234
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5668783290885985,
+  "warnings": []
+}

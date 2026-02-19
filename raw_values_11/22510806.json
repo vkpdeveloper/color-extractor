@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#C04931",
+    "rgb": [
+      192,
+      73,
+      49
+    ],
+    "lab": [
+      47.1953048634144,
+      46.18893712481312,
+      38.42009012923435
+    ],
+    "proportion": 0.9739883264850296,
+    "percentage": 97.39883264850296,
+    "matched_name": "Red",
+    "matched_palette_name": "Bright Red",
+    "matched_code": "18-1763 TCX",
+    "delta_e": 7.431675949027197
+  },
+  "dominant_colors": [
+    {
+      "hex": "#C04931",
+      "rgb": [
+        192,
+        73,
+        49
+      ],
+      "lab": [
+        47.1953048634144,
+        46.18893712481312,
+        38.42009012923435
+      ],
+      "proportion": 0.9739883264850296,
+      "percentage": 97.39883264850296,
+      "matched_name": "Red",
+      "matched_palette_name": "Bright Red",
+      "matched_code": "18-1763 TCX",
+      "delta_e": 7.431675949027197
+    },
+    {
+      "hex": "#6C2114",
+      "rgb": [
+        108,
+        33,
+        20
+      ],
+      "lab": [
+        24.832368679739385,
+        32.52234492196222,
+        26.397894866229578
+      ],
+      "proportion": 0.026011673514970374,
+      "percentage": 2.6011673514970375,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Burgundy",
+      "matched_code": "19-1650 TCX",
+      "delta_e": 9.545605718542115
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5859106272915219,
+  "warnings": []
+}

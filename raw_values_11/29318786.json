@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#373A44",
+    "rgb": [
+      55,
+      58,
+      68
+    ],
+    "lab": [
+      24.49511348442394,
+      1.5222681890809735,
+      -6.62987936276748
+    ],
+    "proportion": 0.8196198791531859,
+    "percentage": 81.96198791531859,
+    "matched_name": "Navy Blue",
+    "matched_palette_name": "Navy Blue",
+    "matched_code": "19-3923 TCX",
+    "delta_e": 4.92486744038066
+  },
+  "dominant_colors": [
+    {
+      "hex": "#373A44",
+      "rgb": [
+        55,
+        58,
+        68
+      ],
+      "lab": [
+        24.49511348442394,
+        1.5222681890809735,
+        -6.62987936276748
+      ],
+      "proportion": 0.8196198791531859,
+      "percentage": 81.96198791531859,
+      "matched_name": "Navy Blue",
+      "matched_palette_name": "Navy Blue",
+      "matched_code": "19-3923 TCX",
+      "delta_e": 4.92486744038066
+    },
+    {
+      "hex": "#365161",
+      "rgb": [
+        54,
+        81,
+        97
+      ],
+      "lab": [
+        33.169893201844886,
+        -5.591802036892109,
+        -12.279094070463223
+      ],
+      "proportion": 0.12537672295350796,
+      "percentage": 12.537672295350797,
+      "matched_name": "Blue",
+      "matched_palette_name": "Classic Blue",
+      "matched_code": "19-4052 TCX",
+      "delta_e": 10.268391513293475
+    },
+    {
+      "hex": "#776561",
+      "rgb": [
+        119,
+        101,
+        97
+      ],
+      "lab": [
+        44.28934414786629,
+        6.4393312797151365,
+        5.072357614672654
+      ],
+      "proportion": 0.05500339789330615,
+      "percentage": 5.5003397893306145,
+      "matched_name": "Brown",
+      "matched_palette_name": "Cognac",
+      "matched_code": "18-1019 TCX",
+      "delta_e": 7.672685075903861
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5864830941208196,
+  "warnings": []
+}

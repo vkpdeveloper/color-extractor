@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#A9D4EB",
+    "rgb": [
+      169,
+      212,
+      235
+    ],
+    "lab": [
+      82.78770333527147,
+      -9.06116219964749,
+      -15.68677428077378
+    ],
+    "proportion": 0.9030576171836426,
+    "percentage": 90.30576171836427,
+    "matched_name": "Sky Blue",
+    "matched_palette_name": "Sky Blue",
+    "matched_code": "12-4205 TCX",
+    "delta_e": 7.478637050901399
+  },
+  "dominant_colors": [
+    {
+      "hex": "#A9D4EB",
+      "rgb": [
+        169,
+        212,
+        235
+      ],
+      "lab": [
+        82.78770333527147,
+        -9.06116219964749,
+        -15.68677428077378
+      ],
+      "proportion": 0.9030576171836426,
+      "percentage": 90.30576171836427,
+      "matched_name": "Sky Blue",
+      "matched_palette_name": "Sky Blue",
+      "matched_code": "12-4205 TCX",
+      "delta_e": 7.478637050901399
+    },
+    {
+      "hex": "#648CA9",
+      "rgb": [
+        100,
+        140,
+        169
+      ],
+      "lab": [
+        56.338602574262765,
+        -5.8852971151977105,
+        -19.860080444014798
+      ],
+      "proportion": 0.07476369726390464,
+      "percentage": 7.476369726390464,
+      "matched_name": "Sky Blue",
+      "matched_palette_name": "Powder Blue",
+      "matched_code": "15-3919 TCX",
+      "delta_e": 12.25219597019373
+    },
+    {
+      "hex": "#B0BFBC",
+      "rgb": [
+        176,
+        191,
+        188
+      ],
+      "lab": [
+        76.13369004423998,
+        -5.808294037901106,
+        -0.46626370936051487
+      ],
+      "proportion": 0.02217868555245269,
+      "percentage": 2.217868555245269,
+      "matched_name": "Grey",
+      "matched_palette_name": "Mushroom Grey",
+      "matched_code": "13-4201 TCX",
+      "delta_e": 6.926287731427621
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5829062662596292,
+  "warnings": []
+}

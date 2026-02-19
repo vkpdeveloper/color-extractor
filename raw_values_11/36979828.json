@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#90875C",
+    "rgb": [
+      144,
+      135,
+      92
+    ],
+    "lab": [
+      56.04199287925088,
+      -3.580304021522388,
+      24.37978582209047
+    ],
+    "proportion": 0.9065410147545213,
+    "percentage": 90.65410147545214,
+    "matched_name": "Brown",
+    "matched_palette_name": "Khaki",
+    "matched_code": "16-0726 TCX",
+    "delta_e": 4.947804561312844
+  },
+  "dominant_colors": [
+    {
+      "hex": "#90875C",
+      "rgb": [
+        144,
+        135,
+        92
+      ],
+      "lab": [
+        56.04199287925088,
+        -3.580304021522388,
+        24.37978582209047
+      ],
+      "proportion": 0.9065410147545213,
+      "percentage": 90.65410147545214,
+      "matched_name": "Brown",
+      "matched_palette_name": "Khaki",
+      "matched_code": "16-0726 TCX",
+      "delta_e": 4.947804561312844
+    },
+    {
+      "hex": "#B6AC99",
+      "rgb": [
+        182,
+        172,
+        153
+      ],
+      "lab": [
+        70.80653232149771,
+        0.2321205144558034,
+        11.039955694489958
+      ],
+      "proportion": 0.07923420359206525,
+      "percentage": 7.923420359206525,
+      "matched_name": "Beige",
+      "matched_palette_name": "Mushroom Beige",
+      "matched_code": "14-1305 TCX",
+      "delta_e": 7.67832995179968
+    },
+    {
+      "hex": "#494121",
+      "rgb": [
+        73,
+        65,
+        33
+      ],
+      "lab": [
+        27.581727043655604,
+        -1.2505303462607642,
+        20.5239464390998
+      ],
+      "proportion": 0.0142247816534134,
+      "percentage": 1.42247816534134,
+      "matched_name": "Olive Green",
+      "matched_palette_name": "Dark Olive",
+      "matched_code": "19-0512 TCX",
+      "delta_e": 5.50909065305556
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.45973367266792836,
+  "warnings": []
+}

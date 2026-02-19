@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#BFC1DE",
+    "rgb": [
+      191,
+      193,
+      222
+    ],
+    "lab": [
+      78.8747852956447,
+      4.887887466280857,
+      -14.37611620156369
+    ],
+    "proportion": 0.8101711302714768,
+    "percentage": 81.01711302714769,
+    "matched_name": "Pale Periwinkle",
+    "matched_palette_name": "Pale Periwinkle",
+    "matched_code": "12-4306 TCX",
+    "delta_e": 2.4145258229751896
+  },
+  "dominant_colors": [
+    {
+      "hex": "#BFC1DE",
+      "rgb": [
+        191,
+        193,
+        222
+      ],
+      "lab": [
+        78.8747852956447,
+        4.887887466280857,
+        -14.37611620156369
+      ],
+      "proportion": 0.8101711302714768,
+      "percentage": 81.01711302714769,
+      "matched_name": "Pale Periwinkle",
+      "matched_palette_name": "Pale Periwinkle",
+      "matched_code": "12-4306 TCX",
+      "delta_e": 2.4145258229751896
+    },
+    {
+      "hex": "#9796B7",
+      "rgb": [
+        151,
+        150,
+        183
+      ],
+      "lab": [
+        63.28973166588728,
+        7.039652512410075,
+        -16.76474379190896
+      ],
+      "proportion": 0.15231031834766381,
+      "percentage": 15.231031834766382,
+      "matched_name": "Purple",
+      "matched_palette_name": "Dusty Purple",
+      "matched_code": "16-3823 TCX",
+      "delta_e": 9.503842533094788
+    },
+    {
+      "hex": "#66648B",
+      "rgb": [
+        102,
+        100,
+        139
+      ],
+      "lab": [
+        44.02743332220716,
+        9.790040049796126,
+        -21.241707848033336
+      ],
+      "proportion": 0.037518551380859355,
+      "percentage": 3.7518551380859355,
+      "matched_name": "Purple",
+      "matched_palette_name": "Violet",
+      "matched_code": "18-3838 TCX",
+      "delta_e": 9.690524311461166
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6784646317437184,
+  "warnings": []
+}

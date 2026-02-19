@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#B9D4EA",
+    "rgb": [
+      185,
+      212,
+      234
+    ],
+    "lab": [
+      83.63096078507364,
+      -4.45928601872327,
+      -13.727071006009155
+    ],
+    "proportion": 0.9873814899808662,
+    "percentage": 98.73814899808661,
+    "matched_name": "Sky Blue",
+    "matched_palette_name": "Sky Blue",
+    "matched_code": "12-4205 TCX",
+    "delta_e": 4.847254587560648
+  },
+  "dominant_colors": [
+    {
+      "hex": "#B9D4EA",
+      "rgb": [
+        185,
+        212,
+        234
+      ],
+      "lab": [
+        83.63096078507364,
+        -4.45928601872327,
+        -13.727071006009155
+      ],
+      "proportion": 0.9873814899808662,
+      "percentage": 98.73814899808661,
+      "matched_name": "Sky Blue",
+      "matched_palette_name": "Sky Blue",
+      "matched_code": "12-4205 TCX",
+      "delta_e": 4.847254587560648
+    },
+    {
+      "hex": "#57677E",
+      "rgb": [
+        87,
+        103,
+        126
+      ],
+      "lab": [
+        43.239023802076204,
+        -0.09694945318381087,
+        -14.846721180782309
+      ],
+      "proportion": 0.01261851001913387,
+      "percentage": 1.2618510019133868,
+      "matched_name": "Grey",
+      "matched_palette_name": "Steel Grey",
+      "matched_code": "18-4005 TCX",
+      "delta_e": 11.167826018832596
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5850733231425643,
+  "warnings": []
+}

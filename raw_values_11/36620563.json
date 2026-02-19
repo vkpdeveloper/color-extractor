@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#222225",
+    "rgb": [
+      34,
+      34,
+      37
+    ],
+    "lab": [
+      13.333832408119665,
+      1.064394797069921,
+      -2.046456859785714
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Black",
+    "matched_palette_name": "Black",
+    "matched_code": "19-3911 TCX",
+    "delta_e": 1.3998411351778963
+  },
+  "dominant_colors": [
+    {
+      "hex": "#222225",
+      "rgb": [
+        34,
+        34,
+        37
+      ],
+      "lab": [
+        13.333832408119665,
+        1.064394797069921,
+        -2.046456859785714
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Black",
+      "matched_palette_name": "Black",
+      "matched_code": "19-3911 TCX",
+      "delta_e": 1.3998411351778963
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6111206439334852,
+  "warnings": []
+}

@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#3A3643",
+    "rgb": [
+      58,
+      54,
+      67
+    ],
+    "lab": [
+      23.504389139188778,
+      4.762933569555065,
+      -7.696598674428315
+    ],
+    "proportion": 0.9898308546750834,
+    "percentage": 98.98308546750833,
+    "matched_name": "Navy Blue",
+    "matched_palette_name": "Deep Navy",
+    "matched_code": "19-4030 TCX",
+    "delta_e": 5.062658415771989
+  },
+  "dominant_colors": [
+    {
+      "hex": "#3A3643",
+      "rgb": [
+        58,
+        54,
+        67
+      ],
+      "lab": [
+        23.504389139188778,
+        4.762933569555065,
+        -7.696598674428315
+      ],
+      "proportion": 0.9898308546750834,
+      "percentage": 98.98308546750833,
+      "matched_name": "Navy Blue",
+      "matched_palette_name": "Deep Navy",
+      "matched_code": "19-4030 TCX",
+      "delta_e": 5.062658415771989
+    },
+    {
+      "hex": "#9B9A9D",
+      "rgb": [
+        155,
+        154,
+        157
+      ],
+      "lab": [
+        63.74766109736167,
+        1.3273339957481554,
+        -1.7067971936423572
+      ],
+      "proportion": 0.010169145324916595,
+      "percentage": 1.0169145324916595,
+      "matched_name": "Grey",
+      "matched_palette_name": "Neutral Grey",
+      "matched_code": "16-0000 TCX",
+      "delta_e": 1.039211853267055
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6088020898858111,
+  "warnings": []
+}

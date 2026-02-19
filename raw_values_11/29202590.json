@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#EFD9BF",
+    "rgb": [
+      239,
+      217,
+      191
+    ],
+    "lab": [
+      87.7875259730619,
+      3.639289968409047,
+      15.315394471292315
+    ],
+    "proportion": 0.36116135710296127,
+    "percentage": 36.11613571029613,
+    "matched_name": "Beige",
+    "matched_palette_name": "Parchment",
+    "matched_code": "13-0908 TCX",
+    "delta_e": 4.137153568304537
+  },
+  "dominant_colors": [
+    {
+      "hex": "#EFD9BF",
+      "rgb": [
+        239,
+        217,
+        191
+      ],
+      "lab": [
+        87.7875259730619,
+        3.639289968409047,
+        15.315394471292315
+      ],
+      "proportion": 0.36116135710296127,
+      "percentage": 36.11613571029613,
+      "matched_name": "Beige",
+      "matched_palette_name": "Parchment",
+      "matched_code": "13-0908 TCX",
+      "delta_e": 4.137153568304537
+    },
+    {
+      "hex": "#EDE6E7",
+      "rgb": [
+        237,
+        230,
+        231
+      ],
+      "lab": [
+        91.82347518008983,
+        2.706883254516627,
+        0.11427502853811955
+      ],
+      "proportion": 0.33419505921056003,
+      "percentage": 33.419505921056,
+      "matched_name": "Off White",
+      "matched_palette_name": "Off White",
+      "matched_code": "11-4201 TCX",
+      "delta_e": 5.053341081640952
+    },
+    {
+      "hex": "#C4E5E6",
+      "rgb": [
+        196,
+        229,
+        230
+      ],
+      "lab": [
+        88.59415726038414,
+        -10.528367429556322,
+        -4.06680224304101
+      ],
+      "proportion": 0.30464358368647865,
+      "percentage": 30.464358368647865,
+      "matched_name": "White",
+      "matched_palette_name": "Ice White",
+      "matched_code": "11-0604 TCX",
+      "delta_e": 11.63189848204014
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5641081664214339,
+  "warnings": []
+}

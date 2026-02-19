@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#BE89A1",
+    "rgb": [
+      190,
+      137,
+      161
+    ],
+    "lab": [
+      62.87859066317562,
+      24.15902182861945,
+      -4.876231120028418
+    ],
+    "proportion": 0.6151965324343348,
+    "percentage": 61.51965324343348,
+    "matched_name": "Purple",
+    "matched_palette_name": "Mauve",
+    "matched_code": "17-1612 TCX",
+    "delta_e": 9.432637568946218
+  },
+  "dominant_colors": [
+    {
+      "hex": "#BE89A1",
+      "rgb": [
+        190,
+        137,
+        161
+      ],
+      "lab": [
+        62.87859066317562,
+        24.15902182861945,
+        -4.876231120028418
+      ],
+      "proportion": 0.6151965324343348,
+      "percentage": 61.51965324343348,
+      "matched_name": "Purple",
+      "matched_palette_name": "Mauve",
+      "matched_code": "17-1612 TCX",
+      "delta_e": 9.432637568946218
+    },
+    {
+      "hex": "#D9A8BF",
+      "rgb": [
+        217,
+        168,
+        191
+      ],
+      "lab": [
+        73.73904817159986,
+        21.661434523871883,
+        -4.812589623798752
+      ],
+      "proportion": 0.3614989507083536,
+      "percentage": 36.149895070835356,
+      "matched_name": "Purple",
+      "matched_palette_name": "Lilac",
+      "matched_code": "14-3209 TCX",
+      "delta_e": 6.678491120265647
+    },
+    {
+      "hex": "#7B3E56",
+      "rgb": [
+        123,
+        62,
+        86
+      ],
+      "lab": [
+        34.681593823289624,
+        29.440204196212555,
+        -2.5043824019034626
+      ],
+      "proportion": 0.02330451685731159,
+      "percentage": 2.330451685731159,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Burnt Maroon",
+      "matched_code": "19-1540 TCX",
+      "delta_e": 7.070236782527457
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6143678860999597,
+  "warnings": []
+}

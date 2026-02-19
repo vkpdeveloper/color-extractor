@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#528E9D",
+    "rgb": [
+      82,
+      142,
+      157
+    ],
+    "lab": [
+      55.49678369059029,
+      -15.240637231900818,
+      -14.057806337373654
+    ],
+    "proportion": 0.9818128174327201,
+    "percentage": 98.18128174327201,
+    "matched_name": "Teal",
+    "matched_palette_name": "Teal Blue",
+    "matched_code": "18-4528 TCX",
+    "delta_e": 11.084192867678968
+  },
+  "dominant_colors": [
+    {
+      "hex": "#528E9D",
+      "rgb": [
+        82,
+        142,
+        157
+      ],
+      "lab": [
+        55.49678369059029,
+        -15.240637231900818,
+        -14.057806337373654
+      ],
+      "proportion": 0.9818128174327201,
+      "percentage": 98.18128174327201,
+      "matched_name": "Teal",
+      "matched_palette_name": "Teal Blue",
+      "matched_code": "18-4528 TCX",
+      "delta_e": 11.084192867678968
+    },
+    {
+      "hex": "#2C505E",
+      "rgb": [
+        44,
+        80,
+        94
+      ],
+      "lab": [
+        32.10974601792672,
+        -8.775721583808474,
+        -11.942356108101379
+      ],
+      "proportion": 0.01818718256727993,
+      "percentage": 1.8187182567279931,
+      "matched_name": "Teal",
+      "matched_palette_name": "Dark Teal",
+      "matched_code": "17-4919 TCX",
+      "delta_e": 11.571265969117082
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5872072548821786,
+  "warnings": []
+}

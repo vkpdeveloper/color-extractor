@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#E5E5EC",
+    "rgb": [
+      229,
+      229,
+      236
+    ],
+    "lab": [
+      91.06432832942778,
+      1.2375401019465717,
+      -3.630453939101964
+    ],
+    "proportion": 0.5535666227322601,
+    "percentage": 55.35666227322601,
+    "matched_name": "White",
+    "matched_palette_name": "Cool White",
+    "matched_code": "11-0603 TCX",
+    "delta_e": 2.4508996738813407
+  },
+  "dominant_colors": [
+    {
+      "hex": "#E5E5EC",
+      "rgb": [
+        229,
+        229,
+        236
+      ],
+      "lab": [
+        91.06432832942778,
+        1.2375401019465717,
+        -3.630453939101964
+      ],
+      "proportion": 0.5535666227322601,
+      "percentage": 55.35666227322601,
+      "matched_name": "White",
+      "matched_palette_name": "Cool White",
+      "matched_code": "11-0603 TCX",
+      "delta_e": 2.4508996738813407
+    },
+    {
+      "hex": "#C8C5CB",
+      "rgb": [
+        200,
+        197,
+        203
+      ],
+      "lab": [
+        80.06365891275841,
+        2.015733234907702,
+        -2.6432769832470107
+      ],
+      "proportion": 0.4249998274826965,
+      "percentage": 42.49998274826965,
+      "matched_name": "Grey",
+      "matched_palette_name": "Ash Grey",
+      "matched_code": "12-4302 TCX",
+      "delta_e": 2.8263712480645844
+    },
+    {
+      "hex": "#877F7B",
+      "rgb": [
+        135,
+        127,
+        123
+      ],
+      "lab": [
+        53.80313346510064,
+        2.518289340931393,
+        3.036398720676974
+      ],
+      "proportion": 0.02143354978504344,
+      "percentage": 2.1433549785043438,
+      "matched_name": "Grey",
+      "matched_palette_name": "Steel Grey",
+      "matched_code": "18-4005 TCX",
+      "delta_e": 6.89354451353523
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5282860842493871,
+  "warnings": []
+}

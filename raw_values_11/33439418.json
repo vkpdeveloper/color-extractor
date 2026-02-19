@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#335486",
+    "rgb": [
+      51,
+      84,
+      134
+    ],
+    "lab": [
+      35.59743617618885,
+      4.231282659061385,
+      -31.296683629184557
+    ],
+    "proportion": 0.6331643907951814,
+    "percentage": 63.31643907951814,
+    "matched_name": "Blue",
+    "matched_palette_name": "Classic Blue",
+    "matched_code": "19-4052 TCX",
+    "delta_e": 4.525826083660656
+  },
+  "dominant_colors": [
+    {
+      "hex": "#335486",
+      "rgb": [
+        51,
+        84,
+        134
+      ],
+      "lab": [
+        35.59743617618885,
+        4.231282659061385,
+        -31.296683629184557
+      ],
+      "proportion": 0.6331643907951814,
+      "percentage": 63.31643907951814,
+      "matched_name": "Blue",
+      "matched_palette_name": "Classic Blue",
+      "matched_code": "19-4052 TCX",
+      "delta_e": 4.525826083660656
+    },
+    {
+      "hex": "#223B66",
+      "rgb": [
+        34,
+        59,
+        102
+      ],
+      "lab": [
+        24.85880587324638,
+        5.841505449950584,
+        -28.276492488081466
+      ],
+      "proportion": 0.36683560920481856,
+      "percentage": 36.68356092048185,
+      "matched_name": "Blue",
+      "matched_palette_name": "Workwear Blue",
+      "matched_code": "18-4051 TCX",
+      "delta_e": 4.079965726304375
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6165928765956152,
+  "warnings": []
+}

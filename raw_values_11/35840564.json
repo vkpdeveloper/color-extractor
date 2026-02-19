@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#E4E4E6",
+    "rgb": [
+      228,
+      228,
+      230
+    ],
+    "lab": [
+      90.73231549563991,
+      0.4728968663244208,
+      -1.0480506842954163
+    ],
+    "proportion": 0.979645380803939,
+    "percentage": 97.96453808039391,
+    "matched_name": "White",
+    "matched_palette_name": "Ice White",
+    "matched_code": "11-0604 TCX",
+    "delta_e": 2.833946426537302
+  },
+  "dominant_colors": [
+    {
+      "hex": "#E4E4E6",
+      "rgb": [
+        228,
+        228,
+        230
+      ],
+      "lab": [
+        90.73231549563991,
+        0.4728968663244208,
+        -1.0480506842954163
+      ],
+      "proportion": 0.979645380803939,
+      "percentage": 97.96453808039391,
+      "matched_name": "White",
+      "matched_palette_name": "Ice White",
+      "matched_code": "11-0604 TCX",
+      "delta_e": 2.833946426537302
+    },
+    {
+      "hex": "#7E7A81",
+      "rgb": [
+        126,
+        122,
+        129
+      ],
+      "lab": [
+        51.73320162909197,
+        2.736929416602415,
+        -3.324402687153207
+      ],
+      "proportion": 0.011965131255561017,
+      "percentage": 1.1965131255561017,
+      "matched_name": "Grey",
+      "matched_palette_name": "Steel Grey",
+      "matched_code": "18-4005 TCX",
+      "delta_e": 2.904842891267043
+    },
+    {
+      "hex": "#2B2A40",
+      "rgb": [
+        43,
+        42,
+        64
+      ],
+      "lab": [
+        18.157987744895735,
+        6.296570535881709,
+        -13.72111302576915
+      ],
+      "proportion": 0.008389487940499967,
+      "percentage": 0.8389487940499967,
+      "matched_name": "Navy Blue",
+      "matched_palette_name": "Marine Blue",
+      "matched_code": "19-3920 TCX",
+      "delta_e": 2.1149532156069935
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5668916833242194,
+  "warnings": []
+}

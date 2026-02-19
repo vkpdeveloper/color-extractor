@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#E5DEB3",
+    "rgb": [
+      229,
+      222,
+      179
+    ],
+    "lab": [
+      88.04593726770082,
+      -4.458904406685893,
+      21.905405991278684
+    ],
+    "proportion": 0.9134546280712004,
+    "percentage": 91.34546280712004,
+    "matched_name": "Cream",
+    "matched_palette_name": "Vanilla",
+    "matched_code": "11-0104 TCX",
+    "delta_e": 4.495092445338688
+  },
+  "dominant_colors": [
+    {
+      "hex": "#E5DEB3",
+      "rgb": [
+        229,
+        222,
+        179
+      ],
+      "lab": [
+        88.04593726770082,
+        -4.458904406685893,
+        21.905405991278684
+      ],
+      "proportion": 0.9134546280712004,
+      "percentage": 91.34546280712004,
+      "matched_name": "Cream",
+      "matched_palette_name": "Vanilla",
+      "matched_code": "11-0104 TCX",
+      "delta_e": 4.495092445338688
+    },
+    {
+      "hex": "#B8AA7B",
+      "rgb": [
+        184,
+        170,
+        123
+      ],
+      "lab": [
+        69.69252671057072,
+        -2.155161276937334,
+        26.245678551371977
+      ],
+      "proportion": 0.08253235221840471,
+      "percentage": 8.253235221840471,
+      "matched_name": "Beige",
+      "matched_palette_name": "Warm Sand",
+      "matched_code": "15-1214 TCX",
+      "delta_e": 7.7981434501887925
+    },
+    {
+      "hex": "#3C2B1C",
+      "rgb": [
+        60,
+        43,
+        28
+      ],
+      "lab": [
+        19.268191934464667,
+        5.332414717299476,
+        12.946076283054868
+      ],
+      "proportion": 0.004013019710394903,
+      "percentage": 0.40130197103949033,
+      "matched_name": "Brown",
+      "matched_palette_name": "Coffee Brown",
+      "matched_code": "19-0915 TCX",
+      "delta_e": 6.032187834146664
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5824693545207315,
+  "warnings": []
+}

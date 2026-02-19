@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#979B5F",
+    "rgb": [
+      151,
+      155,
+      95
+    ],
+    "lab": [
+      62.291639202494906,
+      -10.83008672506395,
+      30.885909981868263
+    ],
+    "proportion": 0.9302384103860695,
+    "percentage": 93.02384103860695,
+    "matched_name": "Sage Green",
+    "matched_palette_name": "Sage Green",
+    "matched_code": "15-0318 TCX",
+    "delta_e": 6.684657915747386
+  },
+  "dominant_colors": [
+    {
+      "hex": "#979B5F",
+      "rgb": [
+        151,
+        155,
+        95
+      ],
+      "lab": [
+        62.291639202494906,
+        -10.83008672506395,
+        30.885909981868263
+      ],
+      "proportion": 0.9302384103860695,
+      "percentage": 93.02384103860695,
+      "matched_name": "Sage Green",
+      "matched_palette_name": "Sage Green",
+      "matched_code": "15-0318 TCX",
+      "delta_e": 6.684657915747386
+    },
+    {
+      "hex": "#53562C",
+      "rgb": [
+        83,
+        86,
+        44
+      ],
+      "lab": [
+        35.27372831294191,
+        -8.31712318173454,
+        23.95044349774161
+      ],
+      "proportion": 0.06976158961393052,
+      "percentage": 6.976158961393051,
+      "matched_name": "Green",
+      "matched_palette_name": "Forest Green",
+      "matched_code": "19-0414 TCX",
+      "delta_e": 5.9083302064649335
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6095204855768882,
+  "warnings": []
+}

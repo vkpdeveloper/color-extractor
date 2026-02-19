@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#E2E096",
+    "rgb": [
+      226,
+      224,
+      150
+    ],
+    "lab": [
+      87.74281299758844,
+      -10.032671469288958,
+      36.60408978429937
+    ],
+    "proportion": 0.9385751086896835,
+    "percentage": 93.85751086896835,
+    "matched_name": "Cream",
+    "matched_palette_name": "Vanilla",
+    "matched_code": "11-0104 TCX",
+    "delta_e": 7.023216252282131
+  },
+  "dominant_colors": [
+    {
+      "hex": "#E2E096",
+      "rgb": [
+        226,
+        224,
+        150
+      ],
+      "lab": [
+        87.74281299758844,
+        -10.032671469288958,
+        36.60408978429937
+      ],
+      "proportion": 0.9385751086896835,
+      "percentage": 93.85751086896835,
+      "matched_name": "Cream",
+      "matched_palette_name": "Vanilla",
+      "matched_code": "11-0104 TCX",
+      "delta_e": 7.023216252282131
+    },
+    {
+      "hex": "#B9AF6E",
+      "rgb": [
+        185,
+        175,
+        110
+      ],
+      "lab": [
+        70.99834606867003,
+        -6.026040632288524,
+        34.86627362207729
+      ],
+      "proportion": 0.05453464580652401,
+      "percentage": 5.453464580652401,
+      "matched_name": "Mustard",
+      "matched_palette_name": "Dark Mustard",
+      "matched_code": "16-0945 TCX",
+      "delta_e": 9.019901976208132
+    },
+    {
+      "hex": "#675428",
+      "rgb": [
+        103,
+        84,
+        40
+      ],
+      "lab": [
+        36.757754548591166,
+        1.9729443130556918,
+        28.63041100257957
+      ],
+      "proportion": 0.0068902455037925,
+      "percentage": 0.6890245503792499,
+      "matched_name": "Brown",
+      "matched_palette_name": "Macchiato Brown",
+      "matched_code": "19-1220 TCX",
+      "delta_e": 10.627269294634722
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5198654577724822,
+  "warnings": []
+}

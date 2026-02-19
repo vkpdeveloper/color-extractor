@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#A2DDD4",
+    "rgb": [
+      162,
+      221,
+      212
+    ],
+    "lab": [
+      84.05580601602354,
+      -20.533307185348697,
+      -1.7537450167222421
+    ],
+    "proportion": 0.993279692785956,
+    "percentage": 99.32796927859559,
+    "matched_name": "Turquoise",
+    "matched_palette_name": "Aqua",
+    "matched_code": "13-4810 TCX",
+    "delta_e": 4.022315478214467
+  },
+  "dominant_colors": [
+    {
+      "hex": "#A2DDD4",
+      "rgb": [
+        162,
+        221,
+        212
+      ],
+      "lab": [
+        84.05580601602354,
+        -20.533307185348697,
+        -1.7537450167222421
+      ],
+      "proportion": 0.993279692785956,
+      "percentage": 99.32796927859559,
+      "matched_name": "Turquoise",
+      "matched_palette_name": "Aqua",
+      "matched_code": "13-4810 TCX",
+      "delta_e": 4.022315478214467
+    },
+    {
+      "hex": "#324C3E",
+      "rgb": [
+        50,
+        76,
+        62
+      ],
+      "lab": [
+        29.951214777858194,
+        -13.508049072538363,
+        5.2337538553097955
+      ],
+      "proportion": 0.006720307214044071,
+      "percentage": 0.6720307214044071,
+      "matched_name": "Bottle Green",
+      "matched_palette_name": "Bottle Green",
+      "matched_code": "19-5917 TCX",
+      "delta_e": 2.629015558454728
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5839485953918313,
+  "warnings": []
+}

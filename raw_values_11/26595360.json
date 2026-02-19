@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#5E1D2B",
+    "rgb": [
+      94,
+      29,
+      43
+    ],
+    "lab": [
+      21.672643566236268,
+      30.953390734686483,
+      7.0534207789828
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Maroon",
+    "matched_palette_name": "Cordovan Brown",
+    "matched_code": "19-1726 TCX",
+    "delta_e": 4.625787807009722
+  },
+  "dominant_colors": [
+    {
+      "hex": "#5E1D2B",
+      "rgb": [
+        94,
+        29,
+        43
+      ],
+      "lab": [
+        21.672643566236268,
+        30.953390734686483,
+        7.0534207789828
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Cordovan Brown",
+      "matched_code": "19-1726 TCX",
+      "delta_e": 4.625787807009722
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.7649803680262541,
+  "warnings": []
+}

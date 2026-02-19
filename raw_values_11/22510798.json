@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#C89DB2",
+    "rgb": [
+      200,
+      157,
+      178
+    ],
+    "lab": [
+      69.25567307764267,
+      19.112282565166126,
+      -4.62862754628218
+    ],
+    "proportion": 0.6770493159356074,
+    "percentage": 67.70493159356073,
+    "matched_name": "Purple",
+    "matched_palette_name": "Lilac",
+    "matched_code": "14-3209 TCX",
+    "delta_e": 8.101493426830908
+  },
+  "dominant_colors": [
+    {
+      "hex": "#C89DB2",
+      "rgb": [
+        200,
+        157,
+        178
+      ],
+      "lab": [
+        69.25567307764267,
+        19.112282565166126,
+        -4.62862754628218
+      ],
+      "proportion": 0.6770493159356074,
+      "percentage": 67.70493159356073,
+      "matched_name": "Purple",
+      "matched_palette_name": "Lilac",
+      "matched_code": "14-3209 TCX",
+      "delta_e": 8.101493426830908
+    },
+    {
+      "hex": "#E7C3D8",
+      "rgb": [
+        231,
+        195,
+        216
+      ],
+      "lab": [
+        82.33375370513376,
+        16.399135705326625,
+        -5.48441663826836
+      ],
+      "proportion": 0.2861201824171714,
+      "percentage": 28.61201824171714,
+      "matched_name": "Pink",
+      "matched_palette_name": "Rose Pink",
+      "matched_code": "13-1520 TCX",
+      "delta_e": 8.53041242875859
+    },
+    {
+      "hex": "#935E75",
+      "rgb": [
+        147,
+        94,
+        117
+      ],
+      "lab": [
+        46.399918277907624,
+        25.232001330807833,
+        -4.005418339817943
+      ],
+      "proportion": 0.036830501647221306,
+      "percentage": 3.6830501647221308,
+      "matched_name": "Purple",
+      "matched_palette_name": "Mauve",
+      "matched_code": "17-1612 TCX",
+      "delta_e": 6.776001682040877
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5688094493404228,
+  "warnings": []
+}

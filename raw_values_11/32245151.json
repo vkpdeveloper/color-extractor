@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#2F66C5",
+    "rgb": [
+      47,
+      102,
+      197
+    ],
+    "lab": [
+      44.38889378528404,
+      15.833373278337245,
+      -55.087655090979034
+    ],
+    "proportion": 0.95661420252784,
+    "percentage": 95.661420252784,
+    "matched_name": "Blue",
+    "matched_palette_name": "Electric Blue",
+    "matched_code": "18-3949 TCX",
+    "delta_e": 11.177889502763788
+  },
+  "dominant_colors": [
+    {
+      "hex": "#2F66C5",
+      "rgb": [
+        47,
+        102,
+        197
+      ],
+      "lab": [
+        44.38889378528404,
+        15.833373278337245,
+        -55.087655090979034
+      ],
+      "proportion": 0.95661420252784,
+      "percentage": 95.661420252784,
+      "matched_name": "Blue",
+      "matched_palette_name": "Electric Blue",
+      "matched_code": "18-3949 TCX",
+      "delta_e": 11.177889502763788
+    },
+    {
+      "hex": "#293A74",
+      "rgb": [
+        41,
+        58,
+        116
+      ],
+      "lab": [
+        26.194370177572647,
+        12.98929261222724,
+        -35.47242784399665
+      ],
+      "proportion": 0.028582975399272056,
+      "percentage": 2.8582975399272055,
+      "matched_name": "Blue",
+      "matched_palette_name": "Workwear Blue",
+      "matched_code": "18-4051 TCX",
+      "delta_e": 4.935449789864472
+    },
+    {
+      "hex": "#A69EAB",
+      "rgb": [
+        166,
+        158,
+        171
+      ],
+      "lab": [
+        66.24072878341062,
+        5.358542689731982,
+        -5.440377256348668
+      ],
+      "proportion": 0.014802822072887942,
+      "percentage": 1.4802822072887942,
+      "matched_name": "Grey",
+      "matched_palette_name": "Neutral Grey",
+      "matched_code": "16-0000 TCX",
+      "delta_e": 5.6246505640047495
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6084801004694554,
+  "warnings": []
+}

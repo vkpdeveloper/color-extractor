@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#CFE4CB",
+    "rgb": [
+      207,
+      228,
+      203
+    ],
+    "lab": [
+      88.61294684010953,
+      -11.740368339449217,
+      10.124677509824753
+    ],
+    "proportion": 0.7988711244824878,
+    "percentage": 79.88711244824877,
+    "matched_name": "Mint Green",
+    "matched_palette_name": "Pale Mint",
+    "matched_code": "12-0106 TCX",
+    "delta_e": 1.9716065651113528
+  },
+  "dominant_colors": [
+    {
+      "hex": "#CFE4CB",
+      "rgb": [
+        207,
+        228,
+        203
+      ],
+      "lab": [
+        88.61294684010953,
+        -11.740368339449217,
+        10.124677509824753
+      ],
+      "proportion": 0.7988711244824878,
+      "percentage": 79.88711244824877,
+      "matched_name": "Mint Green",
+      "matched_palette_name": "Pale Mint",
+      "matched_code": "12-0106 TCX",
+      "delta_e": 1.9716065651113528
+    },
+    {
+      "hex": "#94B68A",
+      "rgb": [
+        148,
+        182,
+        138
+      ],
+      "lab": [
+        70.48544101698911,
+        -19.64145998134564,
+        18.412517197255607
+      ],
+      "proportion": 0.18189273020141375,
+      "percentage": 18.189273020141375,
+      "matched_name": "Mint Green",
+      "matched_palette_name": "Soft Mint",
+      "matched_code": "12-0107 TCX",
+      "delta_e": 8.752824480400266
+    },
+    {
+      "hex": "#5C724D",
+      "rgb": [
+        92,
+        114,
+        77
+      ],
+      "lab": [
+        45.38279823156269,
+        -15.261235167108786,
+        17.783662764062825
+      ],
+      "proportion": 0.019236145316098456,
+      "percentage": 1.9236145316098456,
+      "matched_name": "Green",
+      "matched_palette_name": "Grass Green",
+      "matched_code": "18-0135 TCX",
+      "delta_e": 6.677211265932823
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5621217187140108,
+  "warnings": []
+}

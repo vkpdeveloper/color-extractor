@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#43252D",
+    "rgb": [
+      67,
+      37,
+      45
+    ],
+    "lab": [
+      18.70195446739247,
+      15.546792837068706,
+      0.8140106198073173
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Maroon",
+    "matched_palette_name": "Wine",
+    "matched_code": "19-1606 TCX",
+    "delta_e": 5.597929946540581
+  },
+  "dominant_colors": [
+    {
+      "hex": "#43252D",
+      "rgb": [
+        67,
+        37,
+        45
+      ],
+      "lab": [
+        18.70195446739247,
+        15.546792837068706,
+        0.8140106198073173
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Wine",
+      "matched_code": "19-1606 TCX",
+      "delta_e": 5.597929946540581
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5833417615442409,
+  "warnings": []
+}

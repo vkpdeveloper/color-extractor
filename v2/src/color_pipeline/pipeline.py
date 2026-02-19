@@ -43,6 +43,8 @@ class ColorExtractionPipeline:
         mask_coverage = float(mask.mean())
         if mask_coverage < 0.05:
             warnings.append("low_mask_coverage")
+            if top_k > 1:
+                top_k = 1
         if mask_coverage > 0.95:
             warnings.append("high_mask_coverage")
 

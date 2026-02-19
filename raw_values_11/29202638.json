@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#F2DBCA",
+    "rgb": [
+      242,
+      219,
+      202
+    ],
+    "lab": [
+      88.80067668506886,
+      5.1353544662814885,
+      11.042803119533282
+    ],
+    "proportion": 0.9785124532043282,
+    "percentage": 97.85124532043282,
+    "matched_name": "Beige",
+    "matched_palette_name": "Light Beige",
+    "matched_code": "12-0806 TCX",
+    "delta_e": 6.57981840179018
+  },
+  "dominant_colors": [
+    {
+      "hex": "#F2DBCA",
+      "rgb": [
+        242,
+        219,
+        202
+      ],
+      "lab": [
+        88.80067668506886,
+        5.1353544662814885,
+        11.042803119533282
+      ],
+      "proportion": 0.9785124532043282,
+      "percentage": 97.85124532043282,
+      "matched_name": "Beige",
+      "matched_palette_name": "Light Beige",
+      "matched_code": "12-0806 TCX",
+      "delta_e": 6.57981840179018
+    },
+    {
+      "hex": "#966143",
+      "rgb": [
+        150,
+        97,
+        67
+      ],
+      "lab": [
+        46.22431067287486,
+        18.612058495349295,
+        25.630339364493235
+      ],
+      "proportion": 0.02148754679567172,
+      "percentage": 2.1487546795671717,
+      "matched_name": "Brown",
+      "matched_palette_name": "Tobacco Brown",
+      "matched_code": "17-1327 TCX",
+      "delta_e": 3.179015462544318
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6039658210789758,
+  "warnings": []
+}

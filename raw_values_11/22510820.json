@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#C52A67",
+    "rgb": [
+      197,
+      42,
+      103
+    ],
+    "lab": [
+      45.031918029254335,
+      63.01187003343467,
+      3.7635271097481113
+    ],
+    "proportion": 0.6839887578867984,
+    "percentage": 68.39887578867983,
+    "matched_name": "Pink",
+    "matched_palette_name": "Fuchsia",
+    "matched_code": "17-2031 TCX",
+    "delta_e": 4.332034141823432
+  },
+  "dominant_colors": [
+    {
+      "hex": "#C52A67",
+      "rgb": [
+        197,
+        42,
+        103
+      ],
+      "lab": [
+        45.031918029254335,
+        63.01187003343467,
+        3.7635271097481113
+      ],
+      "proportion": 0.6839887578867984,
+      "percentage": 68.39887578867983,
+      "matched_name": "Pink",
+      "matched_palette_name": "Fuchsia",
+      "matched_code": "17-2031 TCX",
+      "delta_e": 4.332034141823432
+    },
+    {
+      "hex": "#9A1640",
+      "rgb": [
+        154,
+        22,
+        64
+      ],
+      "lab": [
+        33.610729465478904,
+        53.618662423003364,
+        11.143703019258503
+      ],
+      "proportion": 0.2976244239732364,
+      "percentage": 29.76244239732364,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Beetroot",
+      "matched_code": "19-2024 TCX",
+      "delta_e": 6.595803061136255
+    },
+    {
+      "hex": "#510A18",
+      "rgb": [
+        81,
+        10,
+        24
+      ],
+      "lab": [
+        15.68860113111905,
+        32.3862071754371,
+        11.521250423849688
+      ],
+      "proportion": 0.018386818139965188,
+      "percentage": 1.8386818139965189,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Wine",
+      "matched_code": "19-1606 TCX",
+      "delta_e": 7.921610663640353
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6695274119282363,
+  "warnings": []
+}

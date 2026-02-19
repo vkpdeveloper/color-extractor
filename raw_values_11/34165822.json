@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#E5E5E7",
+    "rgb": [
+      229,
+      229,
+      231
+    ],
+    "lab": [
+      91.06616601162577,
+      0.3941523219259606,
+      -0.8067920528153102
+    ],
+    "proportion": 0.9413321747126825,
+    "percentage": 94.13321747126825,
+    "matched_name": "White",
+    "matched_palette_name": "Ice White",
+    "matched_code": "11-0604 TCX",
+    "delta_e": 2.8654189791174347
+  },
+  "dominant_colors": [
+    {
+      "hex": "#E5E5E7",
+      "rgb": [
+        229,
+        229,
+        231
+      ],
+      "lab": [
+        91.06616601162577,
+        0.3941523219259606,
+        -0.8067920528153102
+      ],
+      "proportion": 0.9413321747126825,
+      "percentage": 94.13321747126825,
+      "matched_name": "White",
+      "matched_palette_name": "Ice White",
+      "matched_code": "11-0604 TCX",
+      "delta_e": 2.8654189791174347
+    },
+    {
+      "hex": "#5D5D53",
+      "rgb": [
+        93,
+        93,
+        83
+      ],
+      "lab": [
+        39.17426011931754,
+        -2.21767941773382,
+        5.8545658945730725
+      ],
+      "proportion": 0.0337567782471785,
+      "percentage": 3.37567782471785,
+      "matched_name": "Olive Green",
+      "matched_palette_name": "Olive Green",
+      "matched_code": "19-0515 TCX",
+      "delta_e": 5.445221164080964
+    },
+    {
+      "hex": "#EDB142",
+      "rgb": [
+        237,
+        177,
+        66
+      ],
+      "lab": [
+        75.99017258069854,
+        11.265926011854713,
+        62.75017858868163
+      ],
+      "proportion": 0.024911047040139033,
+      "percentage": 2.491104704013903,
+      "matched_name": "Yellow",
+      "matched_palette_name": "Golden Rod",
+      "matched_code": "14-0951 TCX",
+      "delta_e": 4.271174794617123
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5495611654781205,
+  "warnings": []
+}

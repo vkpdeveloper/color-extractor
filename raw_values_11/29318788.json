@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#DEDA5D",
+    "rgb": [
+      222,
+      218,
+      93
+    ],
+    "lab": [
+      85.29000060820199,
+      -14.38061512175114,
+      60.73988778286409
+    ],
+    "proportion": 0.9838266146716133,
+    "percentage": 98.38266146716133,
+    "matched_name": "Yellow",
+    "matched_palette_name": "Primrose Yellow",
+    "matched_code": "13-0755 TCX",
+    "delta_e": 9.373422233083277
+  },
+  "dominant_colors": [
+    {
+      "hex": "#DEDA5D",
+      "rgb": [
+        222,
+        218,
+        93
+      ],
+      "lab": [
+        85.29000060820199,
+        -14.38061512175114,
+        60.73988778286409
+      ],
+      "proportion": 0.9838266146716133,
+      "percentage": 98.38266146716133,
+      "matched_name": "Yellow",
+      "matched_palette_name": "Primrose Yellow",
+      "matched_code": "13-0755 TCX",
+      "delta_e": 9.373422233083277
+    },
+    {
+      "hex": "#ACA23F",
+      "rgb": [
+        172,
+        162,
+        63
+      ],
+      "lab": [
+        65.62156823199182,
+        -8.766305283869546,
+        50.93293177145186
+      ],
+      "proportion": 0.01617338532838669,
+      "percentage": 1.6173385328386691,
+      "matched_name": "Mustard",
+      "matched_palette_name": "Dark Mustard",
+      "matched_code": "16-0945 TCX",
+      "delta_e": 10.074973398221152
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6047749953107845,
+  "warnings": []
+}

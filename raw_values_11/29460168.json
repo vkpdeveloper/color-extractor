@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#E1CDC0",
+    "rgb": [
+      225,
+      205,
+      192
+    ],
+    "lab": [
+      83.76591273675916,
+      4.46393118168536,
+      9.05289369468238
+    ],
+    "proportion": 0.9864413211608285,
+    "percentage": 98.64413211608284,
+    "matched_name": "Beige",
+    "matched_palette_name": "Bone",
+    "matched_code": "12-0105 TCX",
+    "delta_e": 6.363580737683514
+  },
+  "dominant_colors": [
+    {
+      "hex": "#E1CDC0",
+      "rgb": [
+        225,
+        205,
+        192
+      ],
+      "lab": [
+        83.76591273675916,
+        4.46393118168536,
+        9.05289369468238
+      ],
+      "proportion": 0.9864413211608285,
+      "percentage": 98.64413211608284,
+      "matched_name": "Beige",
+      "matched_palette_name": "Bone",
+      "matched_code": "12-0105 TCX",
+      "delta_e": 6.363580737683514
+    },
+    {
+      "hex": "#5E463F",
+      "rgb": [
+        94,
+        70,
+        63
+      ],
+      "lab": [
+        32.141354152119106,
+        9.255127972881155,
+        8.144274031184397
+      ],
+      "proportion": 0.013558678839171537,
+      "percentage": 1.3558678839171536,
+      "matched_name": "Brown",
+      "matched_palette_name": "Earth Brown",
+      "matched_code": "18-1028 TCX",
+      "delta_e": 3.4672813394317834
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5623573097389157,
+  "warnings": []
+}

@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#431F26",
+    "rgb": [
+      67,
+      31,
+      38
+    ],
+    "lab": [
+      16.914223566635137,
+      18.095025335810007,
+      3.230721391418434
+    ],
+    "proportion": 0.9841903644825994,
+    "percentage": 98.41903644825994,
+    "matched_name": "Maroon",
+    "matched_palette_name": "Wine",
+    "matched_code": "19-1606 TCX",
+    "delta_e": 5.009066524924363
+  },
+  "dominant_colors": [
+    {
+      "hex": "#431F26",
+      "rgb": [
+        67,
+        31,
+        38
+      ],
+      "lab": [
+        16.914223566635137,
+        18.095025335810007,
+        3.230721391418434
+      ],
+      "proportion": 0.9841903644825994,
+      "percentage": 98.41903644825994,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Wine",
+      "matched_code": "19-1606 TCX",
+      "delta_e": 5.009066524924363
+    },
+    {
+      "hex": "#BC998F",
+      "rgb": [
+        188,
+        153,
+        143
+      ],
+      "lab": [
+        66.00204113344442,
+        11.564583765620394,
+        9.782256100188384
+      ],
+      "proportion": 0.015809635517400583,
+      "percentage": 1.5809635517400582,
+      "matched_name": "Beige",
+      "matched_palette_name": "Mushroom Beige",
+      "matched_code": "14-1305 TCX",
+      "delta_e": 6.784204670128168
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5798339084326194,
+  "warnings": []
+}

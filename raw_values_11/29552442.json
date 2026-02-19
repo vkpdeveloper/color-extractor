@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#EADACB",
+    "rgb": [
+      234,
+      218,
+      203
+    ],
+    "lab": [
+      87.97658284410463,
+      3.221572496001608,
+      9.361426216428397
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Beige",
+    "matched_palette_name": "Light Beige",
+    "matched_code": "12-0806 TCX",
+    "delta_e": 4.307751080854595
+  },
+  "dominant_colors": [
+    {
+      "hex": "#EADACB",
+      "rgb": [
+        234,
+        218,
+        203
+      ],
+      "lab": [
+        87.97658284410463,
+        3.221572496001608,
+        9.361426216428397
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Beige",
+      "matched_palette_name": "Light Beige",
+      "matched_code": "12-0806 TCX",
+      "delta_e": 4.307751080854595
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5180822927148457,
+  "warnings": []
+}

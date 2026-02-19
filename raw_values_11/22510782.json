@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#DB8D8E",
+    "rgb": [
+      219,
+      141,
+      142
+    ],
+    "lab": [
+      66.61473424601073,
+      30.004039782067085,
+      11.881747928659939
+    ],
+    "proportion": 0.9157746980685401,
+    "percentage": 91.57746980685401,
+    "matched_name": "Pink",
+    "matched_palette_name": "Blush Pink",
+    "matched_code": "15-1614 TCX",
+    "delta_e": 5.587214071030726
+  },
+  "dominant_colors": [
+    {
+      "hex": "#DB8D8E",
+      "rgb": [
+        219,
+        141,
+        142
+      ],
+      "lab": [
+        66.61473424601073,
+        30.004039782067085,
+        11.881747928659939
+      ],
+      "proportion": 0.9157746980685401,
+      "percentage": 91.57746980685401,
+      "matched_name": "Pink",
+      "matched_palette_name": "Blush Pink",
+      "matched_code": "15-1614 TCX",
+      "delta_e": 5.587214071030726
+    },
+    {
+      "hex": "#AC504F",
+      "rgb": [
+        172,
+        80,
+        79
+      ],
+      "lab": [
+        45.66220092854044,
+        37.81005226728219,
+        18.687199893518954
+      ],
+      "proportion": 0.0842253019314599,
+      "percentage": 8.42253019314599,
+      "matched_name": "Red",
+      "matched_palette_name": "Red",
+      "matched_code": "19-1663 TCX",
+      "delta_e": 7.727429697842116
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.547545024721298,
+  "warnings": []
+}

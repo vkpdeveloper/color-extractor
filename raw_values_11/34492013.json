@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#2A2926",
+    "rgb": [
+      42,
+      41,
+      38
+    ],
+    "lab": [
+      16.46405479140915,
+      0.04172835900815556,
+      2.0205839042510414
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Black",
+    "matched_palette_name": "Jet Black",
+    "matched_code": "19-0303 TCX",
+    "delta_e": 4.191801427124627
+  },
+  "dominant_colors": [
+    {
+      "hex": "#2A2926",
+      "rgb": [
+        42,
+        41,
+        38
+      ],
+      "lab": [
+        16.46405479140915,
+        0.04172835900815556,
+        2.0205839042510414
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Black",
+      "matched_palette_name": "Jet Black",
+      "matched_code": "19-0303 TCX",
+      "delta_e": 4.191801427124627
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5811917878143044,
+  "warnings": []
+}

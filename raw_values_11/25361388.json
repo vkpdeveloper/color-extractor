@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#662B59",
+    "rgb": [
+      102,
+      43,
+      89
+    ],
+    "lab": [
+      27.38422546326584,
+      32.91877110436623,
+      -15.356288639262077
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Purple",
+    "matched_palette_name": "Plum",
+    "matched_code": "19-3220 TCX",
+    "delta_e": 4.045445883596503
+  },
+  "dominant_colors": [
+    {
+      "hex": "#662B59",
+      "rgb": [
+        102,
+        43,
+        89
+      ],
+      "lab": [
+        27.38422546326584,
+        32.91877110436623,
+        -15.356288639262077
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Purple",
+      "matched_palette_name": "Plum",
+      "matched_code": "19-3220 TCX",
+      "delta_e": 4.045445883596503
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5695328034946627,
+  "warnings": []
+}

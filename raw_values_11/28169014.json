@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#DD8785",
+    "rgb": [
+      221,
+      135,
+      133
+    ],
+    "lab": [
+      65.21394127731153,
+      32.65322666968075,
+      15.202062624665231
+    ],
+    "proportion": 0.5576813249571674,
+    "percentage": 55.768132495716735,
+    "matched_name": "Coral",
+    "matched_palette_name": "Coral",
+    "matched_code": "16-1349 TCX",
+    "delta_e": 7.596269598037094
+  },
+  "dominant_colors": [
+    {
+      "hex": "#DD8785",
+      "rgb": [
+        221,
+        135,
+        133
+      ],
+      "lab": [
+        65.21394127731153,
+        32.65322666968075,
+        15.202062624665231
+      ],
+      "proportion": 0.5576813249571674,
+      "percentage": 55.768132495716735,
+      "matched_name": "Coral",
+      "matched_palette_name": "Coral",
+      "matched_code": "16-1349 TCX",
+      "delta_e": 7.596269598037094
+    },
+    {
+      "hex": "#EC9A97",
+      "rgb": [
+        236,
+        154,
+        151
+      ],
+      "lab": [
+        71.59440706494588,
+        30.582540030536027,
+        14.185893195938847
+      ],
+      "proportion": 0.3970017133066819,
+      "percentage": 39.70017133066819,
+      "matched_name": "Pink",
+      "matched_palette_name": "Blush Pink",
+      "matched_code": "15-1614 TCX",
+      "delta_e": 7.750129095199059
+    },
+    {
+      "hex": "#842927",
+      "rgb": [
+        132,
+        41,
+        39
+      ],
+      "lab": [
+        30.989772235475325,
+        38.88506463890813,
+        23.250974864983462
+      ],
+      "proportion": 0.04531696173615077,
+      "percentage": 4.531696173615077,
+      "matched_name": "Red",
+      "matched_palette_name": "Scarlet Red",
+      "matched_code": "19-1559 TCX",
+      "delta_e": 3.542304035740845
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6265714830983563,
+  "warnings": []
+}

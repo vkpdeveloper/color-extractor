@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#CBBA9F",
+    "rgb": [
+      203,
+      186,
+      159
+    ],
+    "lab": [
+      76.18570142728613,
+      1.7701037503884776,
+      15.68413637395912
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Beige",
+    "matched_palette_name": "Warm Sand",
+    "matched_code": "15-1214 TCX",
+    "delta_e": 5.331423099889642
+  },
+  "dominant_colors": [
+    {
+      "hex": "#CBBA9F",
+      "rgb": [
+        203,
+        186,
+        159
+      ],
+      "lab": [
+        76.18570142728613,
+        1.7701037503884776,
+        15.68413637395912
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Beige",
+      "matched_palette_name": "Warm Sand",
+      "matched_code": "15-1214 TCX",
+      "delta_e": 5.331423099889642
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.550415470963132,
+  "warnings": []
+}

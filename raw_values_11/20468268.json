@@ -1,0 +1,85 @@
+{
+  "primary": {
+    "hex": "#F5F4F7",
+    "rgb": [
+      245,
+      244,
+      247
+    ],
+    "lab": [
+      96.30948314336814,
+      0.9502960841892656,
+      -1.4329739238721277
+    ],
+    "proportion": 0.959436676256105,
+    "percentage": 95.9436676256105,
+    "matched_name": "White",
+    "matched_palette_name": "White",
+    "matched_code": "11-0601 TCX",
+    "delta_e": 4.79828666076335
+  },
+  "dominant_colors": [
+    {
+      "hex": "#F5F4F7",
+      "rgb": [
+        245,
+        244,
+        247
+      ],
+      "lab": [
+        96.30948314336814,
+        0.9502960841892656,
+        -1.4329739238721277
+      ],
+      "proportion": 0.959436676256105,
+      "percentage": 95.9436676256105,
+      "matched_name": "White",
+      "matched_palette_name": "White",
+      "matched_code": "11-0601 TCX",
+      "delta_e": 4.79828666076335
+    },
+    {
+      "hex": "#EFDE8C",
+      "rgb": [
+        239,
+        222,
+        140
+      ],
+      "lab": [
+        88.2880506361852,
+        -5.3971090761754725,
+        42.52066036471033
+      ],
+      "proportion": 0.022191744162708235,
+      "percentage": 2.2191744162708233,
+      "matched_name": "Yellow",
+      "matched_palette_name": "Golden Yellow",
+      "matched_code": "13-0850 TCX",
+      "delta_e": 7.620422873529448
+    },
+    {
+      "hex": "#88786E",
+      "rgb": [
+        136,
+        120,
+        110
+      ],
+      "lab": [
+        51.65780582739084,
+        4.148379878021245,
+        7.9007393261058745
+      ],
+      "proportion": 0.01837157958118686,
+      "percentage": 1.837157958118686,
+      "matched_name": "Brown",
+      "matched_palette_name": "Taupe Brown",
+      "matched_code": "17-0808 TCX",
+      "delta_e": 7.621590559596735
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6526846223712709,
+  "warnings": [
+    "highlight_filter_removed_too_many_pixels"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#4C4554",
+    "rgb": [
+      76,
+      69,
+      84
+    ],
+    "lab": [
+      30.487436506783975,
+      6.384046131130058,
+      -7.8183822691015115
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Grey",
+    "matched_palette_name": "Charcoal Grey",
+    "matched_code": "18-0601 TCX",
+    "delta_e": 7.975023206126222
+  },
+  "dominant_colors": [
+    {
+      "hex": "#4C4554",
+      "rgb": [
+        76,
+        69,
+        84
+      ],
+      "lab": [
+        30.487436506783975,
+        6.384046131130058,
+        -7.8183822691015115
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Grey",
+      "matched_palette_name": "Charcoal Grey",
+      "matched_code": "18-0601 TCX",
+      "delta_e": 7.975023206126222
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.576087307350924,
+  "warnings": []
+}

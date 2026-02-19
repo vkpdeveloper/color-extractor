@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#202024",
+    "rgb": [
+      32,
+      32,
+      36
+    ],
+    "lab": [
+      12.250683100878332,
+      1.3595363203195585,
+      -2.6293926735394217
+    ],
+    "proportion": 0.993973700074588,
+    "percentage": 99.39737000745879,
+    "matched_name": "Black",
+    "matched_palette_name": "Black",
+    "matched_code": "19-3911 TCX",
+    "delta_e": 2.0461717516195126
+  },
+  "dominant_colors": [
+    {
+      "hex": "#202024",
+      "rgb": [
+        32,
+        32,
+        36
+      ],
+      "lab": [
+        12.250683100878332,
+        1.3595363203195585,
+        -2.6293926735394217
+      ],
+      "proportion": 0.993973700074588,
+      "percentage": 99.39737000745879,
+      "matched_name": "Black",
+      "matched_palette_name": "Black",
+      "matched_code": "19-3911 TCX",
+      "delta_e": 2.0461717516195126
+    },
+    {
+      "hex": "#C2BCB5",
+      "rgb": [
+        194,
+        188,
+        181
+      ],
+      "lab": [
+        76.57697078738468,
+        0.7873266323371247,
+        4.11469849037348
+      ],
+      "proportion": 0.006026299925412022,
+      "percentage": 0.6026299925412022,
+      "matched_name": "Grey",
+      "matched_palette_name": "Light Grey",
+      "matched_code": "14-4102 TCX",
+      "delta_e": 5.1197674436376985
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5881387733725408,
+  "warnings": []
+}

@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#F1DFAE",
+    "rgb": [
+      241,
+      223,
+      174
+    ],
+    "lab": [
+      89.28468929963925,
+      -1.436875893089298,
+      26.627098869431602
+    ],
+    "proportion": 0.8975123654349724,
+    "percentage": 89.75123654349724,
+    "matched_name": "Cream",
+    "matched_palette_name": "Vanilla",
+    "matched_code": "11-0104 TCX",
+    "delta_e": 0.6456593820275245
+  },
+  "dominant_colors": [
+    {
+      "hex": "#F1DFAE",
+      "rgb": [
+        241,
+        223,
+        174
+      ],
+      "lab": [
+        89.28468929963925,
+        -1.436875893089298,
+        26.627098869431602
+      ],
+      "proportion": 0.8975123654349724,
+      "percentage": 89.75123654349724,
+      "matched_name": "Cream",
+      "matched_palette_name": "Vanilla",
+      "matched_code": "11-0104 TCX",
+      "delta_e": 0.6456593820275245
+    },
+    {
+      "hex": "#EEC0C9",
+      "rgb": [
+        238,
+        192,
+        201
+      ],
+      "lab": [
+        81.84447637459684,
+        17.83937054031903,
+        1.626968186956681
+      ],
+      "proportion": 0.07535896768397572,
+      "percentage": 7.535896768397572,
+      "matched_name": "Pink",
+      "matched_palette_name": "Rose Pink",
+      "matched_code": "13-1520 TCX",
+      "delta_e": 4.487475617654276
+    },
+    {
+      "hex": "#E57B80",
+      "rgb": [
+        229,
+        123,
+        128
+      ],
+      "lab": [
+        63.56595757921554,
+        41.18587628583674,
+        15.96549292973301
+      ],
+      "proportion": 0.027128666881051918,
+      "percentage": 2.712866688105192,
+      "matched_name": "Coral",
+      "matched_palette_name": "Coral",
+      "matched_code": "16-1349 TCX",
+      "delta_e": 8.083305546153706
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6579991960606975,
+  "warnings": []
+}

@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#181110",
+    "rgb": [
+      24,
+      17,
+      16
+    ],
+    "lab": [
+      5.714061187973272,
+      2.644008700591922,
+      1.7854995106418874
+    ],
+    "proportion": 0.4203995786732297,
+    "percentage": 42.03995786732297,
+    "matched_name": "Black",
+    "matched_palette_name": "Black",
+    "matched_code": "19-3911 TCX",
+    "delta_e": 7.6256642411879465
+  },
+  "dominant_colors": [
+    {
+      "hex": "#181110",
+      "rgb": [
+        24,
+        17,
+        16
+      ],
+      "lab": [
+        5.714061187973272,
+        2.644008700591922,
+        1.7854995106418874
+      ],
+      "proportion": 0.4203995786732297,
+      "percentage": 42.03995786732297,
+      "matched_name": "Black",
+      "matched_palette_name": "Black",
+      "matched_code": "19-3911 TCX",
+      "delta_e": 7.6256642411879465
+    },
+    {
+      "hex": "#E0DDDB",
+      "rgb": [
+        224,
+        221,
+        219
+      ],
+      "lab": [
+        88.15809719583206,
+        0.6884869434187492,
+        1.2694775277713253
+      ],
+      "proportion": 0.32628281389014824,
+      "percentage": 32.62828138901482,
+      "matched_name": "Off White",
+      "matched_palette_name": "Off White",
+      "matched_code": "11-4201 TCX",
+      "delta_e": 4.136105721804518
+    },
+    {
+      "hex": "#4A3F3B",
+      "rgb": [
+        74,
+        63,
+        59
+      ],
+      "lab": [
+        27.60415067493943,
+        4.331369984640255,
+        4.12550199269139
+      ],
+      "proportion": 0.253317607436622,
+      "percentage": 25.3317607436622,
+      "matched_name": "Brown",
+      "matched_palette_name": "Coffee Brown",
+      "matched_code": "19-0915 TCX",
+      "delta_e": 3.334893810549032
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5432013781769429,
+  "warnings": []
+}

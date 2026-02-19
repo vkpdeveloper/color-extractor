@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#2E3180",
+    "rgb": [
+      46,
+      49,
+      128
+    ],
+    "lab": [
+      24.585646939541114,
+      24.901069897400706,
+      -45.159868079324006
+    ],
+    "proportion": 0.9293681045371727,
+    "percentage": 92.93681045371727,
+    "matched_name": "Blue",
+    "matched_palette_name": "Electric Blue",
+    "matched_code": "18-3949 TCX",
+    "delta_e": 8.995366550161428
+  },
+  "dominant_colors": [
+    {
+      "hex": "#2E3180",
+      "rgb": [
+        46,
+        49,
+        128
+      ],
+      "lab": [
+        24.585646939541114,
+        24.901069897400706,
+        -45.159868079324006
+      ],
+      "proportion": 0.9293681045371727,
+      "percentage": 92.93681045371727,
+      "matched_name": "Blue",
+      "matched_palette_name": "Electric Blue",
+      "matched_code": "18-3949 TCX",
+      "delta_e": 8.995366550161428
+    },
+    {
+      "hex": "#16143B",
+      "rgb": [
+        22,
+        20,
+        59
+      ],
+      "lab": [
+        9.011871765064019,
+        14.031265085012626,
+        -24.70956649457664
+      ],
+      "proportion": 0.07063189546282737,
+      "percentage": 7.063189546282738,
+      "matched_name": "Navy Blue",
+      "matched_palette_name": "Marine Blue",
+      "matched_code": "19-3920 TCX",
+      "delta_e": 10.40335240201309
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5077631944799097,
+  "warnings": []
+}

@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#E1DCD7",
+    "rgb": [
+      225,
+      220,
+      215
+    ],
+    "lab": [
+      87.92638519783117,
+      0.8720727371570816,
+      3.132037971713767
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Off White",
+    "matched_palette_name": "Natural White",
+    "matched_code": "11-0701 TCX",
+    "delta_e": 3.4869667440761862
+  },
+  "dominant_colors": [
+    {
+      "hex": "#E1DCD7",
+      "rgb": [
+        225,
+        220,
+        215
+      ],
+      "lab": [
+        87.92638519783117,
+        0.8720727371570816,
+        3.132037971713767
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Off White",
+      "matched_palette_name": "Natural White",
+      "matched_code": "11-0701 TCX",
+      "delta_e": 3.4869667440761862
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6730710862337919,
+  "warnings": []
+}

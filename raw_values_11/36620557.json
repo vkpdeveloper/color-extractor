@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#D0BED1",
+    "rgb": [
+      208,
+      190,
+      209
+    ],
+    "lab": [
+      78.92627321486405,
+      9.823635172137074,
+      -7.256537750897298
+    ],
+    "proportion": 0.9780661806135115,
+    "percentage": 97.80661806135114,
+    "matched_name": "Purple",
+    "matched_palette_name": "Dusty Lavender",
+    "matched_code": "14-3207 TCX",
+    "delta_e": 3.1623754791308696
+  },
+  "dominant_colors": [
+    {
+      "hex": "#D0BED1",
+      "rgb": [
+        208,
+        190,
+        209
+      ],
+      "lab": [
+        78.92627321486405,
+        9.823635172137074,
+        -7.256537750897298
+      ],
+      "proportion": 0.9780661806135115,
+      "percentage": 97.80661806135114,
+      "matched_name": "Purple",
+      "matched_palette_name": "Dusty Lavender",
+      "matched_code": "14-3207 TCX",
+      "delta_e": 3.1623754791308696
+    },
+    {
+      "hex": "#836C84",
+      "rgb": [
+        131,
+        108,
+        132
+      ],
+      "lab": [
+        48.65050317516818,
+        13.417432469567705,
+        -9.472579038739605
+      ],
+      "proportion": 0.02193381938648851,
+      "percentage": 2.193381938648851,
+      "matched_name": "Purple",
+      "matched_palette_name": "Mauve",
+      "matched_code": "17-1612 TCX",
+      "delta_e": 7.256390154383204
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5590510212005902,
+  "warnings": []
+}

@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#70232B",
+    "rgb": [
+      112,
+      35,
+      43
+    ],
+    "lab": [
+      26.19521628368605,
+      34.37150259514017,
+      13.732317675917496
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Maroon",
+    "matched_palette_name": "Maroon",
+    "matched_code": "19-1656 TCX",
+    "delta_e": 1.666402362592423
+  },
+  "dominant_colors": [
+    {
+      "hex": "#70232B",
+      "rgb": [
+        112,
+        35,
+        43
+      ],
+      "lab": [
+        26.19521628368605,
+        34.37150259514017,
+        13.732317675917496
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Maroon",
+      "matched_code": "19-1656 TCX",
+      "delta_e": 1.666402362592423
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5706028056131482,
+  "warnings": []
+}

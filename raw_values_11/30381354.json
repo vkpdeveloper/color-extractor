@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#F7BBC3",
+    "rgb": [
+      247,
+      187,
+      195
+    ],
+    "lab": [
+      81.45365808406422,
+      22.444387374802982,
+      4.558517581107593
+    ],
+    "proportion": 0.9832330828759617,
+    "percentage": 98.32330828759616,
+    "matched_name": "Pink",
+    "matched_palette_name": "Rose Pink",
+    "matched_code": "13-1520 TCX",
+    "delta_e": 5.242497595492133
+  },
+  "dominant_colors": [
+    {
+      "hex": "#F7BBC3",
+      "rgb": [
+        247,
+        187,
+        195
+      ],
+      "lab": [
+        81.45365808406422,
+        22.444387374802982,
+        4.558517581107593
+      ],
+      "proportion": 0.9832330828759617,
+      "percentage": 98.32330828759616,
+      "matched_name": "Pink",
+      "matched_palette_name": "Rose Pink",
+      "matched_code": "13-1520 TCX",
+      "delta_e": 5.242497595492133
+    },
+    {
+      "hex": "#C66169",
+      "rgb": [
+        198,
+        97,
+        105
+      ],
+      "lab": [
+        53.46969788737076,
+        41.09539227765153,
+        14.651835494139569
+      ],
+      "proportion": 0.016766917124038282,
+      "percentage": 1.6766917124038283,
+      "matched_name": "Rose Gold",
+      "matched_palette_name": "Rose Gold",
+      "matched_code": "14-1316 TCX",
+      "delta_e": 5.788157250963353
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5385295864083082,
+  "warnings": []
+}

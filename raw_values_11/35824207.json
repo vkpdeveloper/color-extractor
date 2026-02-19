@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#B04555",
+    "rgb": [
+      176,
+      69,
+      85
+    ],
+    "lab": [
+      44.38200296912034,
+      44.82722524111176,
+      13.035670226588753
+    ],
+    "proportion": 0.36836858345721885,
+    "percentage": 36.836858345721886,
+    "matched_name": "Red",
+    "matched_palette_name": "Red",
+    "matched_code": "19-1663 TCX",
+    "delta_e": 7.977943257698036
+  },
+  "dominant_colors": [
+    {
+      "hex": "#B04555",
+      "rgb": [
+        176,
+        69,
+        85
+      ],
+      "lab": [
+        44.38200296912034,
+        44.82722524111176,
+        13.035670226588753
+      ],
+      "proportion": 0.36836858345721885,
+      "percentage": 36.836858345721886,
+      "matched_name": "Red",
+      "matched_palette_name": "Red",
+      "matched_code": "19-1663 TCX",
+      "delta_e": 7.977943257698036
+    },
+    {
+      "hex": "#DF869B",
+      "rgb": [
+        223,
+        134,
+        155
+      ],
+      "lab": [
+        65.83088343394753,
+        36.90040565398147,
+        3.3545854450247283
+      ],
+      "proportion": 0.34610666233587767,
+      "percentage": 34.610666233587764,
+      "matched_name": "Pink",
+      "matched_palette_name": "Blush Pink",
+      "matched_code": "15-1614 TCX",
+      "delta_e": 5.407651328741291
+    },
+    {
+      "hex": "#EEB6CD",
+      "rgb": [
+        238,
+        182,
+        205
+      ],
+      "lab": [
+        79.54901220431324,
+        23.557197695381358,
+        -3.6032648749366274
+      ],
+      "proportion": 0.28552475420690343,
+      "percentage": 28.552475420690342,
+      "matched_name": "Pink",
+      "matched_palette_name": "Baby Pink",
+      "matched_code": "14-2311 TCX",
+      "delta_e": 5.671495271784472
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.4539777973276658,
+  "warnings": []
+}

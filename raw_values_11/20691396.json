@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#C0BCCF",
+    "rgb": [
+      192,
+      188,
+      207
+    ],
+    "lab": [
+      77.08243297299042,
+      4.76802824716144,
+      -8.84669851034128
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Purple",
+    "matched_palette_name": "Lavender Mist",
+    "matched_code": "13-3803 TCX",
+    "delta_e": 3.9749226038919176
+  },
+  "dominant_colors": [
+    {
+      "hex": "#C0BCCF",
+      "rgb": [
+        192,
+        188,
+        207
+      ],
+      "lab": [
+        77.08243297299042,
+        4.76802824716144,
+        -8.84669851034128
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Purple",
+      "matched_palette_name": "Lavender Mist",
+      "matched_code": "13-3803 TCX",
+      "delta_e": 3.9749226038919176
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6330143298537213,
+  "warnings": []
+}

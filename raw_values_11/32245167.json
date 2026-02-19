@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#DFDEE8",
+    "rgb": [
+      223,
+      222,
+      232
+    ],
+    "lab": [
+      88.87344905985245,
+      2.190018003667033,
+      -4.676024101943444
+    ],
+    "proportion": 0.9865027114950724,
+    "percentage": 98.65027114950723,
+    "matched_name": "White",
+    "matched_palette_name": "Cool White",
+    "matched_code": "11-0603 TCX",
+    "delta_e": 4.051064400059665
+  },
+  "dominant_colors": [
+    {
+      "hex": "#DFDEE8",
+      "rgb": [
+        223,
+        222,
+        232
+      ],
+      "lab": [
+        88.87344905985245,
+        2.190018003667033,
+        -4.676024101943444
+      ],
+      "proportion": 0.9865027114950724,
+      "percentage": 98.65027114950723,
+      "matched_name": "White",
+      "matched_palette_name": "Cool White",
+      "matched_code": "11-0603 TCX",
+      "delta_e": 4.051064400059665
+    },
+    {
+      "hex": "#6E6064",
+      "rgb": [
+        110,
+        96,
+        100
+      ],
+      "lab": [
+        42.21603397908563,
+        6.26825148215007,
+        -0.1422072517842876
+      ],
+      "proportion": 0.013497288504927606,
+      "percentage": 1.3497288504927607,
+      "matched_name": "Grey",
+      "matched_palette_name": "Concrete Grey",
+      "matched_code": "18-0503 TCX",
+      "delta_e": 7.3318089177006325
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6080550453609395,
+  "warnings": []
+}

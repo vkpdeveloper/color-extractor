@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#DFD9DB",
+    "rgb": [
+      223,
+      217,
+      219
+    ],
+    "lab": [
+      87.28817320400465,
+      2.1603227007608092,
+      -0.2536760270203233
+    ],
+    "proportion": 0.9935558189619192,
+    "percentage": 99.35558189619192,
+    "matched_name": "Grey",
+    "matched_palette_name": "Ash Grey",
+    "matched_code": "12-4302 TCX",
+    "delta_e": 5.731912748806585
+  },
+  "dominant_colors": [
+    {
+      "hex": "#DFD9DB",
+      "rgb": [
+        223,
+        217,
+        219
+      ],
+      "lab": [
+        87.28817320400465,
+        2.1603227007608092,
+        -0.2536760270203233
+      ],
+      "proportion": 0.9935558189619192,
+      "percentage": 99.35558189619192,
+      "matched_name": "Grey",
+      "matched_palette_name": "Ash Grey",
+      "matched_code": "12-4302 TCX",
+      "delta_e": 5.731912748806585
+    },
+    {
+      "hex": "#6F5F5C",
+      "rgb": [
+        111,
+        95,
+        92
+      ],
+      "lab": [
+        41.66218511807335,
+        6.188960508814096,
+        4.145355366812127
+      ],
+      "proportion": 0.00644418103808077,
+      "percentage": 0.644418103808077,
+      "matched_name": "Brown",
+      "matched_palette_name": "Earth Brown",
+      "matched_code": "18-1028 TCX",
+      "delta_e": 8.914526329247416
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.44869183730380047,
+  "warnings": []
+}

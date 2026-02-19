@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#A5C3DF",
+    "rgb": [
+      165,
+      195,
+      223
+    ],
+    "lab": [
+      77.36271268688667,
+      -3.7667905547665663,
+      -17.321824847907834
+    ],
+    "proportion": 0.9301839625357465,
+    "percentage": 93.01839625357465,
+    "matched_name": "Sky Blue",
+    "matched_palette_name": "Ice Blue",
+    "matched_code": "14-4122 TCX",
+    "delta_e": 3.887547729409382
+  },
+  "dominant_colors": [
+    {
+      "hex": "#A5C3DF",
+      "rgb": [
+        165,
+        195,
+        223
+      ],
+      "lab": [
+        77.36271268688667,
+        -3.7667905547665663,
+        -17.321824847907834
+      ],
+      "proportion": 0.9301839625357465,
+      "percentage": 93.01839625357465,
+      "matched_name": "Sky Blue",
+      "matched_palette_name": "Ice Blue",
+      "matched_code": "14-4122 TCX",
+      "delta_e": 3.887547729409382
+    },
+    {
+      "hex": "#788FAD",
+      "rgb": [
+        120,
+        143,
+        173
+      ],
+      "lab": [
+        58.57433289137855,
+        -1.036605224186928,
+        -18.275194339774643
+      ],
+      "proportion": 0.059571905648427154,
+      "percentage": 5.9571905648427155,
+      "matched_name": "Grey",
+      "matched_palette_name": "Frost Grey",
+      "matched_code": "17-0000 TCX",
+      "delta_e": 11.416381288227182
+    },
+    {
+      "hex": "#36455D",
+      "rgb": [
+        54,
+        69,
+        93
+      ],
+      "lab": [
+        29.02991381298761,
+        1.060295240443625,
+        -16.227147576537483
+      ],
+      "proportion": 0.010244131815826344,
+      "percentage": 1.0244131815826345,
+      "matched_name": "Navy Blue",
+      "matched_palette_name": "Deep Navy",
+      "matched_code": "19-4030 TCX",
+      "delta_e": 7.651406968593793
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6068566437383994,
+  "warnings": []
+}

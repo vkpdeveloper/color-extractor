@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#DD5886",
+    "rgb": [
+      221,
+      88,
+      134
+    ],
+    "lab": [
+      56.199027062464936,
+      56.22750162874389,
+      1.439934582547857
+    ],
+    "proportion": 0.9163402682796689,
+    "percentage": 91.63402682796689,
+    "matched_name": "Pink",
+    "matched_palette_name": "Fuchsia",
+    "matched_code": "17-2031 TCX",
+    "delta_e": 7.261436854612306
+  },
+  "dominant_colors": [
+    {
+      "hex": "#DD5886",
+      "rgb": [
+        221,
+        88,
+        134
+      ],
+      "lab": [
+        56.199027062464936,
+        56.22750162874389,
+        1.439934582547857
+      ],
+      "proportion": 0.9163402682796689,
+      "percentage": 91.63402682796689,
+      "matched_name": "Pink",
+      "matched_palette_name": "Fuchsia",
+      "matched_code": "17-2031 TCX",
+      "delta_e": 7.261436854612306
+    },
+    {
+      "hex": "#F88ABD",
+      "rgb": [
+        248,
+        138,
+        189
+      ],
+      "lab": [
+        70.86363445937502,
+        47.53181119000406,
+        -7.578007406040313
+      ],
+      "proportion": 0.08365973172033114,
+      "percentage": 8.365973172033115,
+      "matched_name": "Pink",
+      "matched_palette_name": "Baby Pink",
+      "matched_code": "14-2311 TCX",
+      "delta_e": 6.012694572999541
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.510195882660581,
+  "warnings": []
+}

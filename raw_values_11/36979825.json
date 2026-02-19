@@ -1,0 +1,45 @@
+{
+  "primary": {
+    "hex": "#8F8779",
+    "rgb": [
+      143,
+      135,
+      121
+    ],
+    "lab": [
+      56.664592681443864,
+      0.3287111284273018,
+      8.656197532676735
+    ],
+    "proportion": 1.0,
+    "percentage": 100.0,
+    "matched_name": "Brown",
+    "matched_palette_name": "Taupe Brown",
+    "matched_code": "17-0808 TCX",
+    "delta_e": 2.373470262476099
+  },
+  "dominant_colors": [
+    {
+      "hex": "#8F8779",
+      "rgb": [
+        143,
+        135,
+        121
+      ],
+      "lab": [
+        56.664592681443864,
+        0.3287111284273018,
+        8.656197532676735
+      ],
+      "proportion": 1.0,
+      "percentage": 100.0,
+      "matched_name": "Brown",
+      "matched_palette_name": "Taupe Brown",
+      "matched_code": "17-0808 TCX",
+      "delta_e": 2.373470262476099
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5634639429575561,
+  "warnings": []
+}

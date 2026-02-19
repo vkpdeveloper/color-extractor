@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#1F4443",
+    "rgb": [
+      31,
+      68,
+      67
+    ],
+    "lab": [
+      26.393228992360772,
+      -13.575656607442589,
+      -3.4554389885067462
+    ],
+    "proportion": 0.866931851713802,
+    "percentage": 86.69318517138021,
+    "matched_name": "Green",
+    "matched_palette_name": "Deep Forest Green",
+    "matched_code": "19-5230 TCX",
+    "delta_e": 3.931360256311113
+  },
+  "dominant_colors": [
+    {
+      "hex": "#1F4443",
+      "rgb": [
+        31,
+        68,
+        67
+      ],
+      "lab": [
+        26.393228992360772,
+        -13.575656607442589,
+        -3.4554389885067462
+      ],
+      "proportion": 0.866931851713802,
+      "percentage": 86.69318517138021,
+      "matched_name": "Green",
+      "matched_palette_name": "Deep Forest Green",
+      "matched_code": "19-5230 TCX",
+      "delta_e": 3.931360256311113
+    },
+    {
+      "hex": "#112020",
+      "rgb": [
+        17,
+        32,
+        32
+      ],
+      "lab": [
+        10.989202144982741,
+        -6.273671560684274,
+        -2.04663968586122
+      ],
+      "proportion": 0.13306814828619795,
+      "percentage": 13.306814828619796,
+      "matched_name": "Navy Blue",
+      "matched_palette_name": "Ink Blue",
+      "matched_code": "19-4044 TCX",
+      "delta_e": 9.033079511860004
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5645931283905967,
+  "warnings": []
+}

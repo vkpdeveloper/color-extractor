@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#2B4ABA",
+    "rgb": [
+      43,
+      74,
+      186
+    ],
+    "lab": [
+      36.005031593656895,
+      28.81546199320317,
+      -61.790450197161526
+    ],
+    "proportion": 0.9939671434515129,
+    "percentage": 99.3967143451513,
+    "matched_name": "Blue",
+    "matched_palette_name": "Electric Blue",
+    "matched_code": "18-3949 TCX",
+    "delta_e": 4.514254246856768
+  },
+  "dominant_colors": [
+    {
+      "hex": "#2B4ABA",
+      "rgb": [
+        43,
+        74,
+        186
+      ],
+      "lab": [
+        36.005031593656895,
+        28.81546199320317,
+        -61.790450197161526
+      ],
+      "proportion": 0.9939671434515129,
+      "percentage": 99.3967143451513,
+      "matched_name": "Blue",
+      "matched_palette_name": "Electric Blue",
+      "matched_code": "18-3949 TCX",
+      "delta_e": 4.514254246856768
+    },
+    {
+      "hex": "#C4C1B4",
+      "rgb": [
+        196,
+        193,
+        180
+      ],
+      "lab": [
+        77.98239390895841,
+        -1.3605369310295075,
+        6.729946981089718
+      ],
+      "proportion": 0.006032856548487039,
+      "percentage": 0.6032856548487039,
+      "matched_name": "Beige",
+      "matched_palette_name": "Bone",
+      "matched_code": "12-0105 TCX",
+      "delta_e": 4.44596933004532
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.616306471078596,
+  "warnings": []
+}

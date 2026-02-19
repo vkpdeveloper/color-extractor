@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#C22B2C",
+    "rgb": [
+      194,
+      43,
+      44
+    ],
+    "lab": [
+      43.35975138945347,
+      58.461233481591094,
+      37.19019710362098
+    ],
+    "proportion": 0.4491098118515914,
+    "percentage": 44.91098118515914,
+    "matched_name": "Red",
+    "matched_palette_name": "Bright Red",
+    "matched_code": "18-1763 TCX",
+    "delta_e": 1.4231069347605563
+  },
+  "dominant_colors": [
+    {
+      "hex": "#C22B2C",
+      "rgb": [
+        194,
+        43,
+        44
+      ],
+      "lab": [
+        43.35975138945347,
+        58.461233481591094,
+        37.19019710362098
+      ],
+      "proportion": 0.4491098118515914,
+      "percentage": 44.91098118515914,
+      "matched_name": "Red",
+      "matched_palette_name": "Bright Red",
+      "matched_code": "18-1763 TCX",
+      "delta_e": 1.4231069347605563
+    },
+    {
+      "hex": "#ED4C4D",
+      "rgb": [
+        237,
+        76,
+        77
+      ],
+      "lab": [
+        55.799128393553545,
+        61.66768814989067,
+        34.948796151587224
+      ],
+      "proportion": 0.4259011781255495,
+      "percentage": 42.59011781255495,
+      "matched_name": "Coral",
+      "matched_palette_name": "Hot Coral",
+      "matched_code": "17-1656 TCX",
+      "delta_e": 6.504040327560831
+    },
+    {
+      "hex": "#E48B91",
+      "rgb": [
+        228,
+        139,
+        145
+      ],
+      "lab": [
+        67.27788127509304,
+        34.40068248512667,
+        11.368041044166937
+      ],
+      "proportion": 0.12498901002285914,
+      "percentage": 12.498901002285914,
+      "matched_name": "Pink",
+      "matched_palette_name": "Blush Pink",
+      "matched_code": "15-1614 TCX",
+      "delta_e": 6.012675129817836
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5482830597679823,
+  "warnings": []
+}

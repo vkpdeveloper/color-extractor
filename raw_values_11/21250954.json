@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#BB8463",
+    "rgb": [
+      187,
+      132,
+      99
+    ],
+    "lab": [
+      59.95318207659701,
+      17.251647050421166,
+      26.306024989556953
+    ],
+    "proportion": 0.6655146210025001,
+    "percentage": 66.55146210025002,
+    "matched_name": "Orange",
+    "matched_palette_name": "Amber",
+    "matched_code": "16-1350 TCX",
+    "delta_e": 9.159342313885002
+  },
+  "dominant_colors": [
+    {
+      "hex": "#BB8463",
+      "rgb": [
+        187,
+        132,
+        99
+      ],
+      "lab": [
+        59.95318207659701,
+        17.251647050421166,
+        26.306024989556953
+      ],
+      "proportion": 0.6655146210025001,
+      "percentage": 66.55146210025002,
+      "matched_name": "Orange",
+      "matched_palette_name": "Amber",
+      "matched_code": "16-1350 TCX",
+      "delta_e": 9.159342313885002
+    },
+    {
+      "hex": "#8B5437",
+      "rgb": [
+        139,
+        84,
+        55
+      ],
+      "lab": [
+        41.525661471435015,
+        19.762432189760776,
+        26.772292624681867
+      ],
+      "proportion": 0.2065050554269704,
+      "percentage": 20.65050554269704,
+      "matched_name": "Brown",
+      "matched_palette_name": "Ginger Brown",
+      "matched_code": "18-1048 TCX",
+      "delta_e": 4.111065002375425
+    },
+    {
+      "hex": "#5D2A13",
+      "rgb": [
+        93,
+        42,
+        19
+      ],
+      "lab": [
+        23.658830659015603,
+        21.70855276698854,
+        25.38871303358728
+      ],
+      "proportion": 0.12798032357052944,
+      "percentage": 12.798032357052943,
+      "matched_name": "Brown",
+      "matched_palette_name": "Dark Brown",
+      "matched_code": "19-1526 TCX",
+      "delta_e": 10.223245504410693
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5804218360277759,
+  "warnings": []
+}

@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#543987",
+    "rgb": [
+      84,
+      57,
+      135
+    ],
+    "lab": [
+      30.80345866503419,
+      30.391670908714946,
+      -39.3979705381262
+    ],
+    "proportion": 0.9904900831733845,
+    "percentage": 99.04900831733845,
+    "matched_name": "Purple",
+    "matched_palette_name": "Royal Purple",
+    "matched_code": "19-3642 TCX",
+    "delta_e": 3.5262055727925423
+  },
+  "dominant_colors": [
+    {
+      "hex": "#543987",
+      "rgb": [
+        84,
+        57,
+        135
+      ],
+      "lab": [
+        30.80345866503419,
+        30.391670908714946,
+        -39.3979705381262
+      ],
+      "proportion": 0.9904900831733845,
+      "percentage": 99.04900831733845,
+      "matched_name": "Purple",
+      "matched_palette_name": "Royal Purple",
+      "matched_code": "19-3642 TCX",
+      "delta_e": 3.5262055727925423
+    },
+    {
+      "hex": "#9F747B",
+      "rgb": [
+        159,
+        116,
+        123
+      ],
+      "lab": [
+        53.216892714443986,
+        18.215437620122096,
+        3.0449256173556876
+      ],
+      "proportion": 0.009509916826615483,
+      "percentage": 0.9509916826615483,
+      "matched_name": "Purple",
+      "matched_palette_name": "Mauve",
+      "matched_code": "17-1612 TCX",
+      "delta_e": 5.957134376895819
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.20900814750873636,
+  "warnings": []
+}

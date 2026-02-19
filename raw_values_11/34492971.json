@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#992336",
+    "rgb": [
+      153,
+      35,
+      54
+    ],
+    "lab": [
+      34.52458783742475,
+      49.029658090809235,
+      19.0844400514613
+    ],
+    "proportion": 0.9484300528989682,
+    "percentage": 94.84300528989682,
+    "matched_name": "Red",
+    "matched_palette_name": "Chilli Red",
+    "matched_code": "19-1557 TCX",
+    "delta_e": 1.5129925855674586
+  },
+  "dominant_colors": [
+    {
+      "hex": "#992336",
+      "rgb": [
+        153,
+        35,
+        54
+      ],
+      "lab": [
+        34.52458783742475,
+        49.029658090809235,
+        19.0844400514613
+      ],
+      "proportion": 0.9484300528989682,
+      "percentage": 94.84300528989682,
+      "matched_name": "Red",
+      "matched_palette_name": "Chilli Red",
+      "matched_code": "19-1557 TCX",
+      "delta_e": 1.5129925855674586
+    },
+    {
+      "hex": "#2E1C20",
+      "rgb": [
+        46,
+        28,
+        32
+      ],
+      "lab": [
+        12.815643292841383,
+        9.339817586963136,
+        1.2612974238392667
+      ],
+      "proportion": 0.047104959932959725,
+      "percentage": 4.7104959932959725,
+      "matched_name": "Brown",
+      "matched_palette_name": "Dark Brown",
+      "matched_code": "19-1526 TCX",
+      "delta_e": 9.542286654688692
+    },
+    {
+      "hex": "#E0CCBB",
+      "rgb": [
+        224,
+        204,
+        187
+      ],
+      "lab": [
+        83.21688948466725,
+        4.065789689885335,
+        11.060516910045568
+      ],
+      "proportion": 0.0044649871680720685,
+      "percentage": 0.4464987168072069,
+      "matched_name": "Beige",
+      "matched_palette_name": "Parchment",
+      "matched_code": "13-0908 TCX",
+      "delta_e": 5.018810257829304
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5695184707551554,
+  "warnings": []
+}

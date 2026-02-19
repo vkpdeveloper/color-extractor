@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#DBBC84",
+    "rgb": [
+      219,
+      188,
+      132
+    ],
+    "lab": [
+      77.5829568123695,
+      3.6356418875859,
+      32.34903559752103
+    ],
+    "proportion": 0.5523872134111266,
+    "percentage": 55.238721341112665,
+    "matched_name": "Beige",
+    "matched_palette_name": "Warm Sand",
+    "matched_code": "15-1214 TCX",
+    "delta_e": 4.391589637946251
+  },
+  "dominant_colors": [
+    {
+      "hex": "#DBBC84",
+      "rgb": [
+        219,
+        188,
+        132
+      ],
+      "lab": [
+        77.5829568123695,
+        3.6356418875859,
+        32.34903559752103
+      ],
+      "proportion": 0.5523872134111266,
+      "percentage": 55.238721341112665,
+      "matched_name": "Beige",
+      "matched_palette_name": "Warm Sand",
+      "matched_code": "15-1214 TCX",
+      "delta_e": 4.391589637946251
+    },
+    {
+      "hex": "#E4DCD7",
+      "rgb": [
+        228,
+        220,
+        215
+      ],
+      "lab": [
+        88.364282624321,
+        1.6398429038407214,
+        3.7476958642484313
+      ],
+      "proportion": 0.40129632673185966,
+      "percentage": 40.12963267318597,
+      "matched_name": "Off White",
+      "matched_palette_name": "Natural White",
+      "matched_code": "11-0701 TCX",
+      "delta_e": 3.3709517828037345
+    },
+    {
+      "hex": "#966D39",
+      "rgb": [
+        150,
+        109,
+        57
+      ],
+      "lab": [
+        49.03580421441296,
+        10.554983670116457,
+        34.70445882013324
+      ],
+      "proportion": 0.04631645985701372,
+      "percentage": 4.631645985701372,
+      "matched_name": "Brown",
+      "matched_palette_name": "Ginger Brown",
+      "matched_code": "18-1048 TCX",
+      "delta_e": 7.930882283479318
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.6129620563035496,
+  "warnings": []
+}

@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#263245",
+    "rgb": [
+      38,
+      50,
+      69
+    ],
+    "lab": [
+      20.577873419703238,
+      0.6612194276269967,
+      -13.235510884175614
+    ],
+    "proportion": 0.8001460893849113,
+    "percentage": 80.01460893849112,
+    "matched_name": "Navy Blue",
+    "matched_palette_name": "Midnight Navy",
+    "matched_code": "19-4024 TCX",
+    "delta_e": 1.7846271622347896
+  },
+  "dominant_colors": [
+    {
+      "hex": "#263245",
+      "rgb": [
+        38,
+        50,
+        69
+      ],
+      "lab": [
+        20.577873419703238,
+        0.6612194276269967,
+        -13.235510884175614
+      ],
+      "proportion": 0.8001460893849113,
+      "percentage": 80.01460893849112,
+      "matched_name": "Navy Blue",
+      "matched_palette_name": "Midnight Navy",
+      "matched_code": "19-4024 TCX",
+      "delta_e": 1.7846271622347896
+    },
+    {
+      "hex": "#445368",
+      "rgb": [
+        68,
+        83,
+        104
+      ],
+      "lab": [
+        34.88124718935849,
+        -0.1219602525303668,
+        -13.905927478707685
+      ],
+      "proportion": 0.19985391061508878,
+      "percentage": 19.985391061508878,
+      "matched_name": "Blue",
+      "matched_palette_name": "Workwear Blue",
+      "matched_code": "18-4051 TCX",
+      "delta_e": 9.454979789069519
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5787091344779006,
+  "warnings": []
+}

@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#792926",
+    "rgb": [
+      121,
+      41,
+      38
+    ],
+    "lab": [
+      29.005585718744275,
+      34.770649263928675,
+      20.642971293370532
+    ],
+    "proportion": 0.9024816308889209,
+    "percentage": 90.24816308889208,
+    "matched_name": "Red",
+    "matched_palette_name": "Scarlet Red",
+    "matched_code": "19-1559 TCX",
+    "delta_e": 5.22473839243211
+  },
+  "dominant_colors": [
+    {
+      "hex": "#792926",
+      "rgb": [
+        121,
+        41,
+        38
+      ],
+      "lab": [
+        29.005585718744275,
+        34.770649263928675,
+        20.642971293370532
+      ],
+      "proportion": 0.9024816308889209,
+      "percentage": 90.24816308889208,
+      "matched_name": "Red",
+      "matched_palette_name": "Scarlet Red",
+      "matched_code": "19-1559 TCX",
+      "delta_e": 5.22473839243211
+    },
+    {
+      "hex": "#310E0F",
+      "rgb": [
+        49,
+        14,
+        15
+      ],
+      "lab": [
+        8.89934736774866,
+        17.7714026850218,
+        7.194493997454909
+      ],
+      "proportion": 0.0975183691110791,
+      "percentage": 9.75183691110791,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Wine",
+      "matched_code": "19-1606 TCX",
+      "delta_e": 10.07316803537543
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.4473166447079491,
+  "warnings": []
+}

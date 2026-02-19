@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#EFB5CF",
+    "rgb": [
+      239,
+      181,
+      207
+    ],
+    "lab": [
+      79.6094422356839,
+      24.506417205524237,
+      -4.643938924017337
+    ],
+    "proportion": 0.9743183898297969,
+    "percentage": 97.43183898297968,
+    "matched_name": "Pink",
+    "matched_palette_name": "Baby Pink",
+    "matched_code": "14-2311 TCX",
+    "delta_e": 5.429462582625529
+  },
+  "dominant_colors": [
+    {
+      "hex": "#EFB5CF",
+      "rgb": [
+        239,
+        181,
+        207
+      ],
+      "lab": [
+        79.6094422356839,
+        24.506417205524237,
+        -4.643938924017337
+      ],
+      "proportion": 0.9743183898297969,
+      "percentage": 97.43183898297968,
+      "matched_name": "Pink",
+      "matched_palette_name": "Baby Pink",
+      "matched_code": "14-2311 TCX",
+      "delta_e": 5.429462582625529
+    },
+    {
+      "hex": "#A17578",
+      "rgb": [
+        161,
+        117,
+        120
+      ],
+      "lab": [
+        53.630640625536095,
+        18.119544808589282,
+        5.008607293921306
+      ],
+      "proportion": 0.018206359735668764,
+      "percentage": 1.8206359735668765,
+      "matched_name": "Purple",
+      "matched_palette_name": "Mauve",
+      "matched_code": "17-1612 TCX",
+      "delta_e": 7.359693811324422
+    },
+    {
+      "hex": "#361E28",
+      "rgb": [
+        54,
+        30,
+        40
+      ],
+      "lab": [
+        14.736047861245332,
+        12.985804511277328,
+        -1.5380111843794815
+      ],
+      "proportion": 0.007475250434534356,
+      "percentage": 0.7475250434534355,
+      "matched_name": "Maroon",
+      "matched_palette_name": "Wine",
+      "matched_code": "19-1606 TCX",
+      "delta_e": 9.206328815285747
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.602898741482479,
+  "warnings": []
+}

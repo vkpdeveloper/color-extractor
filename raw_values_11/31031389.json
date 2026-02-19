@@ -1,0 +1,64 @@
+{
+  "primary": {
+    "hex": "#2F2E31",
+    "rgb": [
+      47,
+      46,
+      49
+    ],
+    "lab": [
+      19.225581506609938,
+      0.7484299080936456,
+      -1.4730863489726709
+    ],
+    "proportion": 0.9753747575560076,
+    "percentage": 97.53747575560075,
+    "matched_name": "Black",
+    "matched_palette_name": "Jet Black",
+    "matched_code": "19-0303 TCX",
+    "delta_e": 0.9465421635074203
+  },
+  "dominant_colors": [
+    {
+      "hex": "#2F2E31",
+      "rgb": [
+        47,
+        46,
+        49
+      ],
+      "lab": [
+        19.225581506609938,
+        0.7484299080936456,
+        -1.4730863489726709
+      ],
+      "proportion": 0.9753747575560076,
+      "percentage": 97.53747575560075,
+      "matched_name": "Black",
+      "matched_palette_name": "Jet Black",
+      "matched_code": "19-0303 TCX",
+      "delta_e": 0.9465421635074203
+    },
+    {
+      "hex": "#C7D293",
+      "rgb": [
+        199,
+        210,
+        147
+      ],
+      "lab": [
+        81.98608501892794,
+        -13.98283373979681,
+        30.04048841965011
+      ],
+      "proportion": 0.024625242443992494,
+      "percentage": 2.4625242443992494,
+      "matched_name": "Mint Green",
+      "matched_palette_name": "Soft Mint",
+      "matched_code": "12-0107 TCX",
+      "delta_e": 8.977364067120718
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5684544557161102,
+  "warnings": []
+}

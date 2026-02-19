@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#E7DFB5",
+    "rgb": [
+      231,
+      223,
+      181
+    ],
+    "lab": [
+      88.57915263200782,
+      -3.952856141038237,
+      21.939793052384434
+    ],
+    "proportion": 0.6551317413553298,
+    "percentage": 65.51317413553298,
+    "matched_name": "Cream",
+    "matched_palette_name": "Vanilla",
+    "matched_code": "11-0104 TCX",
+    "delta_e": 4.070530237787047
+  },
+  "dominant_colors": [
+    {
+      "hex": "#E7DFB5",
+      "rgb": [
+        231,
+        223,
+        181
+      ],
+      "lab": [
+        88.57915263200782,
+        -3.952856141038237,
+        21.939793052384434
+      ],
+      "proportion": 0.6551317413553298,
+      "percentage": 65.51317413553298,
+      "matched_name": "Cream",
+      "matched_palette_name": "Vanilla",
+      "matched_code": "11-0104 TCX",
+      "delta_e": 4.070530237787047
+    },
+    {
+      "hex": "#E1DFE8",
+      "rgb": [
+        225,
+        223,
+        232
+      ],
+      "lab": [
+        89.09760816389714,
+        2.4830186083400534,
+        -4.321220556383872
+      ],
+      "proportion": 0.2056010625944318,
+      "percentage": 20.56010625944318,
+      "matched_name": "White",
+      "matched_palette_name": "Cool White",
+      "matched_code": "11-0603 TCX",
+      "delta_e": 4.351543060460395
+    },
+    {
+      "hex": "#1C3E75",
+      "rgb": [
+        28,
+        62,
+        117
+      ],
+      "lab": [
+        26.66961139148129,
+        8.461489159712501,
+        -35.176629526681474
+      ],
+      "proportion": 0.13926719605023838,
+      "percentage": 13.926719605023838,
+      "matched_name": "Blue",
+      "matched_palette_name": "Workwear Blue",
+      "matched_code": "18-4051 TCX",
+      "delta_e": 2.1429711799912736
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.5685213819478051,
+  "warnings": []
+}

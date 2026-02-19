@@ -1,0 +1,83 @@
+{
+  "primary": {
+    "hex": "#EADF83",
+    "rgb": [
+      234,
+      223,
+      131
+    ],
+    "lab": [
+      87.87780879489124,
+      -8.398758245806764,
+      46.106571146869214
+    ],
+    "proportion": 0.9029033017164452,
+    "percentage": 90.29033017164451,
+    "matched_name": "Yellow",
+    "matched_palette_name": "Golden Yellow",
+    "matched_code": "13-0850 TCX",
+    "delta_e": 8.370136358653438
+  },
+  "dominant_colors": [
+    {
+      "hex": "#EADF83",
+      "rgb": [
+        234,
+        223,
+        131
+      ],
+      "lab": [
+        87.87780879489124,
+        -8.398758245806764,
+        46.106571146869214
+      ],
+      "proportion": 0.9029033017164452,
+      "percentage": 90.29033017164451,
+      "matched_name": "Yellow",
+      "matched_palette_name": "Golden Yellow",
+      "matched_code": "13-0850 TCX",
+      "delta_e": 8.370136358653438
+    },
+    {
+      "hex": "#B6993A",
+      "rgb": [
+        182,
+        153,
+        58
+      ],
+      "lab": [
+        64.29281858319136,
+        -0.21060747953386016,
+        52.31892579059523
+      ],
+      "proportion": 0.07652591676161052,
+      "percentage": 7.652591676161053,
+      "matched_name": "Mustard",
+      "matched_palette_name": "Dark Mustard",
+      "matched_code": "16-0945 TCX",
+      "delta_e": 6.000763908649331
+    },
+    {
+      "hex": "#7B581E",
+      "rgb": [
+        123,
+        88,
+        30
+      ],
+      "lab": [
+        40.020472741762646,
+        8.181317406541623,
+        37.76721744457441
+      ],
+      "proportion": 0.020570781521944265,
+      "percentage": 2.0570781521944266,
+      "matched_name": "Brown",
+      "matched_palette_name": "Ginger Brown",
+      "matched_code": "18-1048 TCX",
+      "delta_e": 8.438185042960983
+    }
+  ],
+  "palette_source": "open_fallback",
+  "mask_coverage": 0.4996135364672577,
+  "warnings": []
+}
