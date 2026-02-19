@@ -27,6 +27,8 @@ def assign_palette_names(
         distances = deltaE_ciede2000(source_lab, palette_lab).reshape(-1)
         if _is_bright_neutral(color.lab):
             distances = _apply_bright_neutral_penalty(color.lab, palette_lab, distances)
+        if _is_dark_chroma(color.lab):
+            distances = _apply_dark_neutral_penalty(color.lab, palette_lab, distances)
         if humanize:
             matched_name, representative_entry, representative_distance = (
                 _resolve_human_label(
@@ -106,6 +108,27 @@ def _apply_bright_neutral_penalty(
     darker = palette_l < max(l_star - 2.0, 0.0)
     neutral = palette_chroma <= 8.0
     penalty[darker & neutral] = 4.0
+    return distances + penalty
+
+
+def _is_dark_chroma(lab: tuple[float, float, float]) -> bool:
+    l_star, a_star, b_star = lab
+    chroma = float(np.sqrt(a_star * a_star + b_star * b_star))
+    return l_star <= 30.0 and chroma >= 6.0
+
+
+def _apply_dark_neutral_penalty(
+    source_lab: tuple[float, float, float],
+    palette_lab: np.ndarray,
+    distances: np.ndarray,
+) -> np.ndarray:
+    palette = palette_lab.reshape(-1, 3)
+    palette_l = palette[:, 0]
+    palette_chroma = np.sqrt(np.square(palette[:, 1]) + np.square(palette[:, 2]))
+    penalty = np.zeros_like(distances)
+    very_dark = palette_l <= 25.0
+    neutral = palette_chroma <= 5.0
+    penalty[very_dark & neutral] = 4.0
     return distances + penalty
 
 

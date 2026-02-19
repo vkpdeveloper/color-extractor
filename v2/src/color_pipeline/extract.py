@@ -274,9 +274,9 @@ def _merge_neutral_clusters(
 def _merge_chroma_aligned_clusters(
     centers_lab: np.ndarray,
     counts: np.ndarray,
-    delta_e_threshold: float = 6.0,
-    chroma_min: float = 12.0,
-    hue_cosine_threshold: float = 0.97,
+    delta_e_threshold: float = 10.0,
+    chroma_min: float = 6.0,
+    hue_cosine_threshold: float = 0.985,
 ) -> tuple[np.ndarray, np.ndarray]:
     if centers_lab.shape[0] <= 1:
         return centers_lab, counts
