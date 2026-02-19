@@ -67,6 +67,7 @@ def extract_dominant_colors(
         centers_lab = kmeans.cluster_centers_
         counts = np.bincount(labels, minlength=chosen_k).astype(np.float64)
     centers_lab, counts = _merge_neutral_clusters(centers_lab, counts)
+    centers_lab, counts = _merge_chroma_aligned_clusters(centers_lab, counts)
     proportions = counts / max(np.sum(counts), 1.0)
 
     ordered = np.argsort(proportions)[::-1]
@@ -247,6 +248,84 @@ def _merge_neutral_clusters(
                 deltaE_ciede2000(
                     centers_lab[idx].reshape(1, 1, 3),
                     centers_lab[jdx].reshape(1, 1, 3),
+                ).reshape(-1)[0]
+            )
+            if distance <= delta_e_threshold:
+                group.append(jdx)
+                merged[jdx] = True
+
+        group_counts = counts[group].astype(np.float64)
+        weight = float(np.sum(group_counts))
+        if weight <= 0:
+            continue
+        weighted_center = (centers_lab[group] * group_counts[:, None]).sum(
+            axis=0
+        ) / weight
+        new_centers.append(weighted_center)
+        new_counts.append(weight)
+
+    if not new_centers:
+        return centers_lab, counts
+    return np.asarray(new_centers, dtype=np.float64), np.asarray(
+        new_counts, dtype=np.float64
+    )
+
+
+def _merge_chroma_aligned_clusters(
+    centers_lab: np.ndarray,
+    counts: np.ndarray,
+    delta_e_threshold: float = 6.0,
+    chroma_min: float = 12.0,
+    hue_cosine_threshold: float = 0.97,
+) -> tuple[np.ndarray, np.ndarray]:
+    if centers_lab.shape[0] <= 1:
+        return centers_lab, counts
+
+    a_vals = centers_lab[:, 1]
+    b_vals = centers_lab[:, 2]
+    chroma = np.sqrt(np.square(a_vals) + np.square(b_vals))
+
+    merged = [False] * centers_lab.shape[0]
+    new_centers: list[np.ndarray] = []
+    new_counts: list[float] = []
+
+    for idx in range(centers_lab.shape[0]):
+        if merged[idx]:
+            continue
+        if chroma[idx] < chroma_min:
+            new_centers.append(centers_lab[idx])
+            new_counts.append(float(counts[idx]))
+            merged[idx] = True
+            continue
+
+        base = centers_lab[idx]
+        base_vec = np.array([base[1], base[2]], dtype=np.float64)
+        base_norm = float(np.linalg.norm(base_vec))
+        if base_norm == 0:
+            new_centers.append(centers_lab[idx])
+            new_counts.append(float(counts[idx]))
+            merged[idx] = True
+            continue
+
+        group = [idx]
+        merged[idx] = True
+        for jdx in range(centers_lab.shape[0]):
+            if merged[jdx] or jdx == idx:
+                continue
+            if chroma[jdx] < chroma_min:
+                continue
+            cand = centers_lab[jdx]
+            cand_vec = np.array([cand[1], cand[2]], dtype=np.float64)
+            cand_norm = float(np.linalg.norm(cand_vec))
+            if cand_norm == 0:
+                continue
+            cosine = float(np.dot(base_vec, cand_vec) / (base_norm * cand_norm))
+            if cosine < hue_cosine_threshold:
+                continue
+            distance = float(
+                deltaE_ciede2000(
+                    base.reshape(1, 1, 3),
+                    cand.reshape(1, 1, 3),
                 ).reshape(-1)[0]
             )
             if distance <= delta_e_threshold:
