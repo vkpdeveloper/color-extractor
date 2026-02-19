@@ -42,6 +42,7 @@ def extract_dominant_colors(
     effective_max_clusters = max(int(max_clusters), int(top_k), 1)
     min_clusters = max(1, min(int(top_k), effective_max_clusters))
 
+    shadow_bias = _is_shadow_biased(lab_pixels)
     if _is_low_variance(lab_pixels):
         chosen_k = 1
     else:
@@ -52,11 +53,19 @@ def extract_dominant_colors(
             random_state=random_state,
         )
 
-    kmeans = KMeans(n_clusters=chosen_k, n_init=10, random_state=random_state)
-    labels = kmeans.fit_predict(lab_pixels)
-    centers_lab = kmeans.cluster_centers_
-
-    counts = np.bincount(labels, minlength=chosen_k).astype(np.float64)
+    if chosen_k == 1 and shadow_bias:
+        high_l_pixels = _select_high_lightness_pixels(lab_pixels)
+        if high_l_pixels.shape[0] > 0:
+            centers_lab = np.mean(high_l_pixels, axis=0).reshape(1, 3)
+        else:
+            centers_lab = np.mean(lab_pixels, axis=0).reshape(1, 3)
+        labels = np.zeros(lab_pixels.shape[0], dtype=int)
+        counts = np.array([float(lab_pixels.shape[0])], dtype=np.float64)
+    else:
+        kmeans = KMeans(n_clusters=chosen_k, n_init=10, random_state=random_state)
+        labels = kmeans.fit_predict(lab_pixels)
+        centers_lab = kmeans.cluster_centers_
+        counts = np.bincount(labels, minlength=chosen_k).astype(np.float64)
     centers_lab, counts = _merge_neutral_clusters(centers_lab, counts)
     proportions = counts / max(np.sum(counts), 1.0)
 
@@ -155,6 +164,36 @@ def _choose_cluster_count(
 
     min_k = max(1, min(int(min_clusters), max_k))
     return max(min_k, chosen)
+
+
+def _is_shadow_biased(
+    lab_pixels: np.ndarray,
+    l_diff_threshold: float = 6.0,
+    chroma_median_threshold: float = 8.0,
+) -> bool:
+    if lab_pixels.size == 0:
+        return False
+    l_values = lab_pixels[:, 0]
+    l_mean = float(np.mean(l_values))
+    l_p90 = float(np.percentile(l_values, 90))
+    chroma = np.sqrt(np.square(lab_pixels[:, 1]) + np.square(lab_pixels[:, 2]))
+    chroma_median = float(np.median(chroma))
+    return (
+        l_p90 - l_mean
+    ) >= l_diff_threshold and chroma_median <= chroma_median_threshold
+
+
+def _select_high_lightness_pixels(
+    lab_pixels: np.ndarray, percentile: float = 75.0
+) -> np.ndarray:
+    if lab_pixels.size == 0:
+        return lab_pixels
+    l_values = lab_pixels[:, 0]
+    threshold = float(np.percentile(l_values, percentile))
+    selected = lab_pixels[l_values >= threshold]
+    if selected.shape[0] < max(32, int(0.1 * lab_pixels.shape[0])):
+        return lab_pixels
+    return selected
 
 
 def _is_low_variance(

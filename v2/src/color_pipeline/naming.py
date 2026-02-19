@@ -17,16 +17,22 @@ def assign_palette_names(
     if not palette:
         raise ValueError("palette must contain at least one entry")
 
-    palette_lab = np.asarray([entry.lab for entry in palette], dtype=np.float64).reshape(1, -1, 3)
+    palette_lab = np.asarray(
+        [entry.lab for entry in palette], dtype=np.float64
+    ).reshape(1, -1, 3)
     named: list[ExtractedColor] = []
 
     for color in colors:
         source_lab = np.asarray(color.lab, dtype=np.float64).reshape(1, 1, 3)
         distances = deltaE_ciede2000(source_lab, palette_lab).reshape(-1)
+        if _is_bright_neutral(color.lab):
+            distances = _apply_bright_neutral_penalty(color.lab, palette_lab, distances)
         if humanize:
-            matched_name, representative_entry, representative_distance = _resolve_human_label(
-                palette=palette,
-                distances=distances,
+            matched_name, representative_entry, representative_distance = (
+                _resolve_human_label(
+                    palette=palette,
+                    distances=distances,
+                )
             )
         else:
             best_idx = int(np.argmin(distances))
@@ -79,6 +85,30 @@ def _resolve_human_label(
     return winner, representative_entry, representative_distance
 
 
+def _is_bright_neutral(lab: tuple[float, float, float]) -> bool:
+    l_star, a_star, b_star = lab
+    chroma = float(np.sqrt(a_star * a_star + b_star * b_star))
+    return l_star >= 88.0 and chroma <= 6.0
+
+
+def _apply_bright_neutral_penalty(
+    source_lab: tuple[float, float, float],
+    palette_lab: np.ndarray,
+    distances: np.ndarray,
+) -> np.ndarray:
+    l_star, _, _ = source_lab
+    palette_l = palette_lab.reshape(-1, 3)[:, 0]
+    palette_chroma = np.sqrt(
+        np.square(palette_lab.reshape(-1, 3)[:, 1])
+        + np.square(palette_lab.reshape(-1, 3)[:, 2])
+    )
+    penalty = np.zeros_like(distances)
+    darker = palette_l < max(l_star - 2.0, 0.0)
+    neutral = palette_chroma <= 8.0
+    penalty[darker & neutral] = 4.0
+    return distances + penalty
+
+
 def _humanize_name(name: str) -> str:
     normalized = name.strip().lower()
     words = set(re.findall(r"[a-z]+", normalized))
@@ -106,7 +136,9 @@ def _humanize_name(name: str) -> str:
         return "Champagne"
 
     # Whites / neutrals.
-    if has_any_phrases("off white", "soft white", "warm white", "natural white", "milk white"):
+    if has_any_phrases(
+        "off white", "soft white", "warm white", "natural white", "milk white"
+    ):
         return "Off White"
     if has_word("white"):
         return "White"
@@ -192,13 +224,28 @@ def _humanize_name(name: str) -> str:
         return "Ochre"
 
     # Browns.
-    if has_any_words("camel", "khaki", "toffee", "cognac", "coffee", "tobacco", "macchiato", "brown", "wood", "earth", "mushroom", "taupe"):
+    if has_any_words(
+        "camel",
+        "khaki",
+        "toffee",
+        "cognac",
+        "coffee",
+        "tobacco",
+        "macchiato",
+        "brown",
+        "wood",
+        "earth",
+        "mushroom",
+        "taupe",
+    ):
         return "Brown"
     if has_word("tan"):
         return "Tan"
 
     # Purples.
-    if has_any_words("violet", "purple", "plum", "lilac", "lavender", "orchid", "eggplant", "mauve"):
+    if has_any_words(
+        "violet", "purple", "plum", "lilac", "lavender", "orchid", "eggplant", "mauve"
+    ):
         return "Purple"
 
     return name.strip().title()

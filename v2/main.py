@@ -50,7 +50,7 @@ def _build_parser() -> argparse.ArgumentParser:
     extract.add_argument(
         "--external-id",
         default=None,
-        help="Optional external id for masked image naming.",
+        help="Optional external id for masked image naming and raw result storage.",
     )
 
     return parser
@@ -78,6 +78,16 @@ def main() -> None:
             top_k=args.top_k,
             debug_mask_out=debug_mask_out,
         )
+
+        if args.external_id:
+            root_dir = Path(__file__).resolve().parents[1]
+            raw_values_dir = root_dir / "raw_values"
+            raw_values_dir.mkdir(parents=True, exist_ok=True)
+            safe_external_id = args.external_id.replace("/", "_").replace("\\", "_")
+            raw_output_path = raw_values_dir / f"{safe_external_id}.json"
+            raw_output_path.write_text(
+                json.dumps(result.to_dict(), indent=2) + "\n", encoding="utf-8"
+            )
 
         payload = json.dumps(result.to_dict(), indent=2)
 

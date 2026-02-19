@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
@@ -62,6 +63,19 @@ def _mask_output_path(external_id: str) -> str:
     return str(root_dir / "masked_images" / f"{safe_id}.jpg")
 
 
+def _save_raw_result(external_id: str, result) -> None:
+    if not external_id:
+        return
+    root_dir = Path(__file__).resolve().parents[1]
+    raw_values_dir = root_dir / "raw_values"
+    raw_values_dir.mkdir(parents=True, exist_ok=True)
+    safe_id = external_id.replace("/", "_").replace("\\", "_")
+    output_path = raw_values_dir / f"{safe_id}.json"
+    output_path.write_text(
+        json.dumps(result.to_dict(), indent=2) + "\n", encoding="utf-8"
+    )
+
+
 @app.post("/extract", response_model=ExtractResponse)
 async def extract_colors(payload: ExtractRequest) -> ExtractResponse:
     pipeline = _build_pipeline(title=payload.title)
@@ -81,6 +95,9 @@ async def extract_colors(payload: ExtractRequest) -> ExtractResponse:
         raise HTTPException(
             status_code=400, detail=f"failed_to_extract_colors: {exc}"
         ) from exc
+
+    if payload.external_id:
+        _save_raw_result(payload.external_id, result)
 
     colors = [
         ColorItem(
