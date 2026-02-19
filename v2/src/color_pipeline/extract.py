@@ -250,7 +250,11 @@ def _merge_neutral_clusters(
                     centers_lab[jdx].reshape(1, 1, 3),
                 ).reshape(-1)[0]
             )
-            if distance <= delta_e_threshold:
+            l_diff = abs(float(centers_lab[idx][0]) - float(centers_lab[jdx][0]))
+            relaxed = distance <= delta_e_threshold
+            if not relaxed and l_diff <= 15.0:
+                relaxed = distance <= (delta_e_threshold + 6.0)
+            if relaxed:
                 group.append(jdx)
                 merged[jdx] = True
 
@@ -274,9 +278,9 @@ def _merge_neutral_clusters(
 def _merge_chroma_aligned_clusters(
     centers_lab: np.ndarray,
     counts: np.ndarray,
-    delta_e_threshold: float = 10.0,
-    chroma_min: float = 6.0,
-    hue_cosine_threshold: float = 0.985,
+    delta_e_threshold: float = 12.0,
+    chroma_min: float = 5.0,
+    hue_cosine_threshold: float = 0.98,
 ) -> tuple[np.ndarray, np.ndarray]:
     if centers_lab.shape[0] <= 1:
         return centers_lab, counts

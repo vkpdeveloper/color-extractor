@@ -38,6 +38,7 @@ class HeuristicMaskProvider:
     border_band_ratio: float = 0.06
     border_component_area_ratio: float = 0.15
     min_center_weight: float = 0.60
+    foreground_chroma_margin: float = 6.0
 
     def get_mask(self, image_rgb: np.ndarray) -> np.ndarray:
         if image_rgb.ndim != 3 or image_rgb.shape[2] != 3:
@@ -63,6 +64,11 @@ class HeuristicMaskProvider:
         foreground = self._retain_centered_components(foreground)
         foreground = self._trim_border_components(foreground)
         foreground = self._prefer_center_mass(foreground)
+        foreground = self._filter_background_like(
+            lab,
+            foreground,
+            connected_background,
+        )
 
         coverage = float(np.mean(foreground))
         if coverage < self.min_coverage or coverage > self.max_coverage:
@@ -244,6 +250,35 @@ class HeuristicMaskProvider:
         if np.count_nonzero(keep_mask) == 0:
             return foreground
         return keep_mask
+
+    def _filter_background_like(
+        self,
+        lab: np.ndarray,
+        foreground: np.ndarray,
+        background: np.ndarray,
+    ) -> np.ndarray:
+        if foreground.size == 0 or background.size == 0:
+            return foreground
+        background_lab = lab[background]
+        if background_lab.size == 0:
+            return foreground
+        bg_mean = np.mean(background_lab.reshape(-1, 3), axis=0)
+        bg_chroma = float(np.sqrt(bg_mean[1] ** 2 + bg_mean[2] ** 2))
+        if bg_chroma > 10.0:
+            return foreground
+        fg_lab = lab[foreground]
+        if fg_lab.size == 0:
+            return foreground
+        distances = np.linalg.norm(
+            fg_lab.reshape(-1, 3) - bg_mean.reshape(1, 3), axis=1
+        )
+        keep = distances > (self.corner_lab_threshold + self.foreground_chroma_margin)
+        filtered = np.zeros_like(foreground, dtype=bool)
+        fg_indices = np.argwhere(foreground)
+        filtered[fg_indices[keep, 0], fg_indices[keep, 1]] = True
+        if np.count_nonzero(filtered) == 0:
+            return foreground
+        return filtered
 
     def _trim_border_components(self, foreground: np.ndarray) -> np.ndarray:
         labels = measure.label(foreground, connectivity=2)
