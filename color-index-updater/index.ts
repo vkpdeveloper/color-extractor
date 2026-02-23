@@ -37,6 +37,12 @@ type IndexRunStats = {
   skippedNoId: number;
 };
 
+type PendingUpdate = {
+  payload: Record<string, unknown>;
+  docId: Primitive;
+  externalId?: Primitive;
+};
+
 function env(name: string, fallback?: string): string {
   const value = process.env[name] ?? fallback;
   if (value === undefined) {
@@ -176,6 +182,19 @@ function pickImageUrl(doc: ProductDoc): string | undefined {
         if (normalized && normalized.startsWith("http")) return normalized;
       }
     }
+  }
+  return undefined;
+}
+
+function pickExternalId(doc: ProductDoc): Primitive | undefined {
+  const value = doc["external_id"] ?? doc["externalId"];
+  if (
+    typeof value === "string" ||
+    typeof value === "number" ||
+    typeof value === "boolean" ||
+    value === null
+  ) {
+    return value;
   }
   return undefined;
 }
@@ -355,6 +374,7 @@ async function processIndex(
         const id =
           (primaryKey ? (doc[primaryKey] as Primitive | undefined) : undefined) ??
           pickPrimaryKey(doc);
+        const externalId = pickExternalId(doc);
 
         if (id === undefined) {
           stats.skippedNoId += 1;
@@ -384,19 +404,23 @@ async function processIndex(
           const colorNames = uniqueStrings(response.colors.map((c) => c.matched_name));
 
           return {
-            [primaryKey ?? "id"]: id,
-            primary_color: response.primary_color,
-            color_names: colorNames,
-            color_info: {
+            payload: {
+              [primaryKey ?? "id"]: id,
               primary_color: response.primary_color,
-              colors: response.colors,
-              palette_source: response.palette_source,
-              mask_coverage: response.mask_coverage,
-              warnings: response.warnings,
-              updated_at: new Date().toISOString(),
-              source: "color-extractor/inference_api",
+              color_names: colorNames,
+              color_info: {
+                primary_color: response.primary_color,
+                colors: response.colors,
+                palette_source: response.palette_source,
+                mask_coverage: response.mask_coverage,
+                warnings: response.warnings,
+                updated_at: new Date().toISOString(),
+                source: "color-extractor/inference_api",
+              },
             },
-          } as Record<string, unknown>;
+            docId: id,
+            externalId,
+          } as PendingUpdate;
         } catch (error) {
           stats.failed += 1;
           updateBar(bar, stats);
@@ -414,16 +438,23 @@ async function processIndex(
         }
       });
 
-      const payloads = updates.filter((x): x is Record<string, unknown> => Boolean(x));
+      const updateRecords = updates.filter((x): x is PendingUpdate => Boolean(x));
 
       if (cfg.dryRun) {
-        stats.updated += payloads.length;
+        stats.updated += updateRecords.length;
         updateBar(bar, stats);
       } else {
-        for (let i = 0; i < payloads.length; i += cfg.updateBatchSize) {
-          const batch = payloads.slice(i, i + cfg.updateBatchSize);
-          await index.updateDocuments(batch);
+        for (let i = 0; i < updateRecords.length; i += cfg.updateBatchSize) {
+          const batch = updateRecords.slice(i, i + cfg.updateBatchSize);
+          await index.updateDocuments(batch.map((record) => record.payload));
           stats.updated += batch.length;
+          for (const record of batch) {
+            logger.info("document updated", {
+              index: indexName,
+              external_id: record.externalId,
+              id: record.docId,
+            });
+          }
           updateBar(bar, stats);
         }
       }
@@ -490,7 +521,7 @@ async function main(): Promise<void> {
       clearOnComplete: false,
       hideCursor: true,
       format:
-        "[{index}] |{bar}| {percentage}% | {value}/{total} | attempted:{attempted} updated:{updated} failed:{failed} skipped:{skipped}",
+        "[{index}] |{bar}| {percentage}% | {value}/{total} | ETA:{eta_formatted} | attempted:{attempted} updated:{updated} failed:{failed} skipped:{skipped}",
     },
     cliProgress.Presets.shades_classic,
   );
