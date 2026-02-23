@@ -16,6 +16,7 @@ def extract_dominant_colors(
     top_k: int = 3,
     max_clusters: int = 4,
     random_state: int = 42,
+    prefer_high_lightness: bool = False,
 ) -> tuple[list[ExtractedColor], list[str]]:
     warnings: list[str] = []
 
@@ -113,9 +114,10 @@ def _remove_specular_pixels(pixels_float: np.ndarray) -> np.ndarray:
     chroma = np.sqrt(np.square(lab[:, 1]) + np.square(lab[:, 2]))
 
     specular_hsv = (hsv[:, 2] > 0.96) & (hsv[:, 1] < 0.10)
-    specular_lab = (l_star > 97.0) & (chroma < 6.0)
+    specular_lab = (l_star > 97.5) & (chroma < 6.0)
+    specular_lab_neutral = (l_star > 98.5) & (chroma < 4.0)
 
-    keep = ~(specular_hsv | specular_lab)
+    keep = ~(specular_hsv | specular_lab | specular_lab_neutral)
     if np.count_nonzero(keep) == 0:
         return pixels_float
     return pixels_float[keep]
@@ -351,6 +353,51 @@ def _merge_chroma_aligned_clusters(
     return np.asarray(new_centers, dtype=np.float64), np.asarray(
         new_counts, dtype=np.float64
     )
+
+
+def _merge_hue_aligned_clusters(
+    centers_lab: np.ndarray,
+    counts: np.ndarray,
+    chroma_min: float = 6.0,
+    hue_cosine_threshold: float = 0.985,
+) -> tuple[np.ndarray, np.ndarray]:
+    if centers_lab.shape[0] <= 1:
+        return centers_lab, counts
+
+    a_vals = centers_lab[:, 1]
+    b_vals = centers_lab[:, 2]
+    chroma = np.sqrt(np.square(a_vals) + np.square(b_vals))
+    valid = chroma >= chroma_min
+    if not np.any(valid):
+        return centers_lab, counts
+
+    hue_vecs = np.stack([a_vals, b_vals], axis=1)
+    norms = np.linalg.norm(hue_vecs, axis=1, keepdims=True)
+    norms[norms == 0] = 1.0
+    hue_unit = hue_vecs / norms
+
+    cosine_matrix = hue_unit @ hue_unit.T
+    min_cosine = float(np.min(cosine_matrix[valid][:, valid]))
+    if min_cosine < hue_cosine_threshold:
+        return centers_lab, counts
+
+    total = float(np.sum(counts))
+    if total <= 0:
+        return centers_lab, counts
+    weighted_center = (centers_lab * counts[:, None]).sum(axis=0) / total
+    return np.asarray([weighted_center], dtype=np.float64), np.asarray(
+        [total], dtype=np.float64
+    )
+
+
+def _all_neutral_clusters(
+    centers_lab: np.ndarray,
+    chroma_threshold: float = 10.0,
+) -> bool:
+    if centers_lab.size == 0:
+        return False
+    chroma = np.sqrt(np.square(centers_lab[:, 1]) + np.square(centers_lab[:, 2]))
+    return bool(np.all(chroma <= chroma_threshold))
 
 
 def _lab_to_rgb_uint8(lab: np.ndarray) -> tuple[int, int, int]:

@@ -90,7 +90,7 @@ def _resolve_human_label(
 def _is_bright_neutral(lab: tuple[float, float, float]) -> bool:
     l_star, a_star, b_star = lab
     chroma = float(np.sqrt(a_star * a_star + b_star * b_star))
-    return l_star >= 90.0 and chroma <= 6.0
+    return l_star >= 88.0 and chroma <= 6.0
 
 
 def _apply_bright_neutral_penalty(

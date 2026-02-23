@@ -53,6 +53,7 @@ class ColorExtractionPipeline:
             mask=mask,
             top_k=top_k,
             random_state=self.random_state,
+            prefer_high_lightness=mask_coverage < 0.05,
         )
         warnings.extend(extract_warnings)
 
