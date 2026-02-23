@@ -43,13 +43,15 @@ class ExtractRequest(BaseModel):
 
 
 class ColorItem(BaseModel):
-    name: str | None
-    code: str | None
+    matched_name: str | None
+    matched_code: str | None
     hex: str
+    proportion: float
     percentage: float
 
 
 class ExtractResponse(BaseModel):
+    primary_color: str | None
     colors: list[ColorItem]
     palette_source: str
     mask_coverage: float
@@ -128,6 +130,56 @@ def _run_pipeline(payload: ExtractRequest):
     return result, debug_mask_out
 
 
+def _normalize_name(name: str | None) -> str | None:
+    if name is None:
+        return None
+    normalized = name.strip()
+    return normalized or None
+
+
+def _build_merged_colors(result: Any) -> list[ColorItem]:
+    grouped: dict[str, dict[str, Any]] = {}
+    ordered_keys: list[str] = []
+
+    for color in result.dominant_colors:
+        name = _normalize_name(getattr(color, "matched_name", None))
+        # Keep unnamed colors isolated so different unknown shades are not merged.
+        key = name.lower() if name else f"__unnamed__::{color.hex.lower()}"
+        proportion = float(color.proportion)
+
+        if key not in grouped:
+            grouped[key] = {
+                "matched_name": name,
+                "matched_code": getattr(color, "matched_code", None),
+                "hex": color.hex,
+                "proportion": 0.0,
+                "top_proportion": -1.0,
+            }
+            ordered_keys.append(key)
+
+        entry = grouped[key]
+        entry["proportion"] += proportion
+
+        # Representative code/hex should come from the largest contributing shade.
+        if proportion > entry["top_proportion"]:
+            entry["top_proportion"] = proportion
+            entry["matched_code"] = getattr(color, "matched_code", None)
+            entry["hex"] = color.hex
+
+    merged = [
+        ColorItem(
+            matched_name=grouped[key]["matched_name"],
+            matched_code=grouped[key]["matched_code"],
+            hex=grouped[key]["hex"],
+            proportion=float(grouped[key]["proportion"]),
+            percentage=float(grouped[key]["proportion"] * 100.0),
+        )
+        for key in ordered_keys
+    ]
+    merged.sort(key=lambda item: item.proportion, reverse=True)
+    return merged
+
+
 @app.post("/extract", response_model=ExtractResponse)
 async def extract_colors(payload: ExtractRequest) -> ExtractResponse:
     try:
@@ -137,16 +189,11 @@ async def extract_colors(payload: ExtractRequest) -> ExtractResponse:
             status_code=400, detail=f"failed_to_extract_colors: {exc}"
         ) from exc
 
-    colors = [
-        ColorItem(
-            name=color.matched_name,
-            code=color.matched_code,
-            hex=color.hex,
-            percentage=float(color.proportion * 100.0),
-        )
-        for color in result.dominant_colors
-    ]
+    colors = _build_merged_colors(result)
+    primary_color = colors[0].matched_name if colors else None
+
     return ExtractResponse(
+        primary_color=primary_color,
         colors=colors,
         palette_source=result.palette_source,
         mask_coverage=float(result.mask_coverage),
