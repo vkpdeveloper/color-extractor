@@ -16,6 +16,8 @@ from src.color_pipeline.localize import (
 )
 from src.color_pipeline.pipeline import ColorExtractionPipeline
 
+MIN_COLOR_PROPORTION = 0.15
+
 
 class ExtractRequest(BaseModel):
     image_url: HttpUrl = Field(..., description="HTTP(S) image URL")
@@ -176,6 +178,7 @@ def _build_merged_colors(result: Any) -> list[ColorItem]:
         )
         for key in ordered_keys
     ]
+    merged = [item for item in merged if item.proportion >= MIN_COLOR_PROPORTION]
     merged.sort(key=lambda item: item.proportion, reverse=True)
     return merged
 

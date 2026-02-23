@@ -135,54 +135,10 @@ function pickTitle(doc: ProductDoc): string | undefined {
   return undefined;
 }
 
-function normalizeImageUrl(raw: string): string | undefined {
-  let url = raw.trim();
-  if (!url) return undefined;
-
-  if (url.startsWith("//")) {
-    url = `https:${url}`;
-  }
-
-  // Myntra often stores template placeholders that are not directly usable.
-  if (url.includes("assets.myntassets.com")) {
-    url = url
-      .replaceAll("h_($height)", "h_1080")
-      .replaceAll("q_($qualityPercentage)", "q_100")
-      .replaceAll("w_($width)", "w_1080");
-  }
-
-  // Prefer https for remote image fetch stability.
-  if (url.startsWith("http://")) {
-    url = `https://${url.slice("http://".length)}`;
-  }
-
-  try {
-    return new URL(url).toString();
-  } catch {
-    try {
-      return encodeURI(url);
-    } catch {
-      return undefined;
-    }
-  }
-}
-
 function pickImageUrl(doc: ProductDoc): string | undefined {
-  const candidates = ["images", "image", "image_url", "thumbnail", "main_image"];
-  for (const key of candidates) {
-    const value = doc[key];
-    if (typeof value === "string") {
-      const normalized = normalizeImageUrl(value);
-      if (normalized && normalized.startsWith("http")) return normalized;
-    }
-    if (Array.isArray(value)) {
-      for (const candidate of value) {
-        if (typeof candidate !== "string") continue;
-        const normalized = normalizeImageUrl(candidate);
-        if (normalized && normalized.startsWith("http")) return normalized;
-      }
-    }
-  }
+  const value = doc["primary_image"];
+  if (typeof value !== "string" || !value.trim()) return undefined;
+  if (value.startsWith("http")) return value;
   return undefined;
 }
 
@@ -347,11 +303,7 @@ async function processIndex(
     "title",
     "name",
     "product_title",
-    "images",
-    "image",
-    "image_url",
-    "thumbnail",
-    "main_image",
+    "primary_image",
   ]);
 
   let offset = 0;
@@ -408,15 +360,7 @@ async function processIndex(
               [primaryKey ?? "id"]: id,
               primary_color: response.primary_color,
               color_names: colorNames,
-              color_info: {
-                primary_color: response.primary_color,
-                colors: response.colors,
-                palette_source: response.palette_source,
-                mask_coverage: response.mask_coverage,
-                warnings: response.warnings,
-                updated_at: new Date().toISOString(),
-                source: "color-extractor/inference_api",
-              },
+              color_info: response.colors,
             },
             docId: id,
             externalId,
