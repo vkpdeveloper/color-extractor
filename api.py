@@ -23,6 +23,13 @@ class ExtractRequest(BaseModel):
         default=None,
         description="Optional external id for masked image naming",
     )
+    solid_garment_mode: bool = Field(
+        default=False,
+        description=(
+            "Enable conservative mask tightening and secondary-shade pruning for "
+            "mostly single-color garments."
+        ),
+    )
 
 
 class ColorItem(BaseModel):
@@ -90,6 +97,7 @@ async def extract_colors(payload: ExtractRequest) -> ExtractResponse:
             payload.palette_path,
             payload.top_k,
             debug_mask_out,
+            payload.solid_garment_mode,
         )
     except Exception as exc:
         raise HTTPException(

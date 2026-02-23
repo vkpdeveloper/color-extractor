@@ -33,6 +33,16 @@ uv run python main.py extract \
 
 If `--palette` is omitted, the fallback open palette is used.
 
+For mostly single-color garments, you can opt into stricter cleanup:
+
+```bash
+uv run python main.py extract \
+  --image /absolute/path/to/image.jpg \
+  --title "Beige slim fit trousers" \
+  --top-k 3 \
+  --solid-garment-mode
+```
+
 Run the FastAPI server:
 
 ```bash

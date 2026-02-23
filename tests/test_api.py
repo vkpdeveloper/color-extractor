@@ -16,12 +16,14 @@ def test_extract_endpoint_returns_color_fields(monkeypatch):
             palette_path: str | None,
             top_k: int,
             debug_mask_out: str | None,
+            solid_garment_mode: bool,
         ):
             assert image_path == "https://example.com/image.jpg"
             assert title == "Example Shirt"
             assert palette_path is None
             assert top_k == 2
             assert debug_mask_out is None
+            assert solid_garment_mode is False
             return SimpleNamespace(
                 dominant_colors=[
                     SimpleNamespace(

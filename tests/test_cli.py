@@ -58,3 +58,44 @@ def test_cli_extract_smoke(tmp_path):
     assert payload["primary"]["percentage"] == 100.0
     assert "percentage" in payload["dominant_colors"][0]
     assert payload["palette_source"] == "pantone_user"
+
+
+def test_cli_extract_smoke_solid_mode(tmp_path):
+    image = np.zeros((80, 80, 3), dtype=np.uint8)
+    image[:, :] = [30, 120, 210]
+
+    image_path = tmp_path / "cli-solid.png"
+    Image.fromarray(image, mode="RGB").save(image_path)
+
+    palette_path = tmp_path / "palette.csv"
+    palette_path.write_text(
+        "name,code,hex\nAzure,PMS-AZURE,#1E78D2\n", encoding="utf-8"
+    )
+
+    out_path = tmp_path / "result-solid.json"
+    repo_root = Path(__file__).resolve().parents[1]
+    cmd = [
+        sys.executable,
+        "-m",
+        "main",
+        "extract",
+        "--image",
+        str(image_path),
+        "--title",
+        "azure shirt",
+        "--palette",
+        str(palette_path),
+        "--top-k",
+        "3",
+        "--solid-garment-mode",
+        "--out",
+        str(out_path),
+    ]
+
+    completed = subprocess.run(
+        cmd, cwd=repo_root, check=True, capture_output=True, text=True
+    )
+
+    assert completed.returncode == 0
+    payload = json.loads(out_path.read_text(encoding="utf-8"))
+    assert payload["primary"]["matched_name"] == "Azure"

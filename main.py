@@ -52,6 +52,14 @@ def _build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Optional external id for masked image naming and raw result storage.",
     )
+    extract.add_argument(
+        "--solid-garment-mode",
+        action="store_true",
+        help=(
+            "Enable conservative mask tightening and secondary-shade pruning for "
+            "mostly single-color garments."
+        ),
+    )
 
     return parser
 
@@ -77,6 +85,7 @@ def main() -> None:
             palette_path=args.palette,
             top_k=args.top_k,
             debug_mask_out=debug_mask_out,
+            solid_garment_mode=args.solid_garment_mode,
         )
 
         if args.external_id:
