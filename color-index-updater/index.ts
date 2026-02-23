@@ -448,8 +448,8 @@ async function processIndex(
 
 async function createLogger(): Promise<winston.Logger> {
   await fs.mkdir(cfg.logDir, { recursive: true });
-  const timestamp = new Date().toISOString().replaceAll(":", "-");
-  const logFile = path.join(cfg.logDir, `color-index-updater-${timestamp}.log`);
+  const dayStamp = new Date().toISOString().slice(0, 10);
+  const logFile = path.join(cfg.logDir, `color-index-updater-${dayStamp}.log`);
 
   const logger = winston.createLogger({
     level: cfg.logLevel,
