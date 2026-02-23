@@ -129,14 +129,52 @@ function pickTitle(doc: ProductDoc): string | undefined {
   return undefined;
 }
 
+function normalizeImageUrl(raw: string): string | undefined {
+  let url = raw.trim();
+  if (!url) return undefined;
+
+  if (url.startsWith("//")) {
+    url = `https:${url}`;
+  }
+
+  // Myntra often stores template placeholders that are not directly usable.
+  if (url.includes("assets.myntassets.com")) {
+    url = url
+      .replaceAll("h_($height)", "h_1080")
+      .replaceAll("q_($qualityPercentage)", "q_100")
+      .replaceAll("w_($width)", "w_1080");
+  }
+
+  // Prefer https for remote image fetch stability.
+  if (url.startsWith("http://")) {
+    url = `https://${url.slice("http://".length)}`;
+  }
+
+  try {
+    return new URL(url).toString();
+  } catch {
+    try {
+      return encodeURI(url);
+    } catch {
+      return undefined;
+    }
+  }
+}
+
 function pickImageUrl(doc: ProductDoc): string | undefined {
   const candidates = ["images", "image", "image_url", "thumbnail", "main_image"];
   for (const key of candidates) {
     const value = doc[key];
-    if (typeof value === "string" && value.startsWith("http")) return value;
+    if (typeof value === "string") {
+      const normalized = normalizeImageUrl(value);
+      if (normalized && normalized.startsWith("http")) return normalized;
+    }
     if (Array.isArray(value)) {
-      const first = value.find((v) => typeof v === "string" && v.startsWith("http"));
-      if (typeof first === "string") return first;
+      for (const candidate of value) {
+        if (typeof candidate !== "string") continue;
+        const normalized = normalizeImageUrl(candidate);
+        if (normalized && normalized.startsWith("http")) return normalized;
+      }
     }
   }
   return undefined;
